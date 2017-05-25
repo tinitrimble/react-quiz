@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Testingstuff h3 {
+  font-size: 26px;
+}
+ 
+.Testingstuff img {
+  width: 400px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.Testingstuff {
+  border: 1px black solid;
+  padding: 10px 10px;
+  margin: 30px 30px;
+}
+
+.possible-choices {
+  margin: 5px 40px 20px 40px;
+  text-align: center;
+}
+
+.does-this-work {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: rgb(229, 229, 229);
+  padding: 10px;
+  display: block;
+  width: 550px;
+  text-align: left;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
