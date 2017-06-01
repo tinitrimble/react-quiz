@@ -17,8 +17,8 @@ class Question extends Component {
     ];
   }
   handleClick () {
-    this.correctAnswer = 'Paris' ? alert('This is correct') : alert('This is incorrect');
-    this.correctAnswer();
+    const correctAnswer = 'Paris' ? alert('This is correct') : alert('This is incorrect');
+    return this.correctAnswer;
   }
   getRandomPictureURL () {
     const randomPictureIndex = Math.floor(Math.random() * this.pics.length);
