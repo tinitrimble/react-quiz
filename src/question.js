@@ -17,7 +17,8 @@ class Question extends Component {
     ];
   }
   handleClick () {
-    alert('this is a test');
+    this.correctAnswer = 'Paris' ? alert('This is correct') : alert('This is incorrect');
+    this.correctAnswer();
   }
   getRandomPictureURL () {
     const randomPictureIndex = Math.floor(Math.random() * this.pics.length);
@@ -30,7 +31,7 @@ class Question extends Component {
   render() {
     return (
       <div className="question">
-        <h3>What is the capital of Paris?</h3>
+        <h3>What is the capital of France?</h3>
         <img src={this.getRandomPictureURL()} />
         <div className="possible-choices">
           <button className="does-this-work" onClick={this.handleClick}>{this.getRandomAnswerOne()}</button>
