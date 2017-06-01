@@ -9,6 +9,12 @@ class Question extends Component {
       'https://img1.etsystatic.com/157/0/5178785/il_340x270.1217995153_bqmw.jpg',
       'https://www.craftstylish.com/assets/uploads/posts/42688/dorset_buttons20_lg.jpg'
     ];
+    this.possibleAnswersOne = [
+      'London',
+      'Paris',
+      'Amsterdam',
+      'Berlin'
+    ];
   }
   handleClick () {
     alert('this is a test');
@@ -17,16 +23,20 @@ class Question extends Component {
     const randomPictureIndex = Math.floor(Math.random() * this.pics.length);
     return this.pics[randomPictureIndex];
   }
+  getRandomAnswerOne () {
+    const randomAnswerOneIndex = Math.floor(Math.random() * this.possibleAnswersOne.length);
+    return this.possibleAnswersOne[randomAnswerOneIndex];
+  }
   render() {
     return (
       <div className="question">
-        <h3>{this.props.question}</h3>
+        <h3>What is the capital of Paris?</h3>
         <img src={this.getRandomPictureURL()} />
         <div className="possible-choices">
-          <button className="does-this-work" onClick={this.handleClick}>{this.props.answer}</button>
-          <button className="does-this-work" onClick={this.handleClick}>{this.props.answer}</button>
-          <button className="does-this-work" onClick={this.handleClick}>{this.props.answer}</button>
-          <button className="does-this-work" onClick={this.handleClick}>{this.props.answer}</button>
+          <button className="does-this-work" onClick={this.handleClick}>{this.getRandomAnswerOne()}</button>
+          <button className="does-this-work" onClick={this.handleClick}>{this.getRandomAnswerOne()}</button>
+          <button className="does-this-work" onClick={this.handleClick}>{this.getRandomAnswerOne()}</button>
+          <button className="does-this-work" onClick={this.handleClick}>{this.getRandomAnswerOne()}</button>
         </div>
       </div>
     );

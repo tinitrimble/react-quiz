@@ -3,7 +3,7 @@
   font-size: 26px;
 }
  
-this.pics {
+.question img {
   width: 400px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -16,7 +16,7 @@ this.pics {
 }
 
 .possible-choices {
-  margin: 5px 40px 20px 40px;
+  margin: 5px 40px 20px 250px;
   text-align: center;
 }
 
@@ -26,6 +26,6 @@ this.pics {
   background-color: rgb(229, 229, 229);
   padding: 10px;
   display: block;
-  width: 550px;
+  width: 850px;
   text-align: left;
 }
