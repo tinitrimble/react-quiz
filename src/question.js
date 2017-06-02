@@ -1,47 +1,42 @@
 import React, { Component } from 'react';
 import './Question.css';
+import PropTypes from 'prop-types';
 
 class Question extends Component {
-  componentWillMount () {
-    this.pics = [
-      'https://www.sfatulmamicilor.ro/uploads/articles/bentita-nasturi-par-forme.jpg',
-      'https://theibtaurisblog.files.wordpress.com/2012/01/vintage-buttons_1.jpg',
-      'https://img1.etsystatic.com/157/0/5178785/il_340x270.1217995153_bqmw.jpg',
-      'https://www.craftstylish.com/assets/uploads/posts/42688/dorset_buttons20_lg.jpg'
-    ];
-    this.possibleAnswersOne = [
-      'London',
-      'Paris',
-      'Amsterdam',
-      'Berlin'
-    ];
+  propTypes = {
+    question: PropTypes.string.isRequired,
+    picture: PropTypes.string,
+    answers: PropTypes.shape ({
+      option: PropTypes.string.isRequired,
+      correct: PropTypes.bool.isRequired
+    })
   }
   handleClick () {
-    const correctAnswer = 'Paris' ? alert('This is correct') : alert('This is incorrect');
-    return this.correctAnswer;
-  }
-  getRandomPictureURL () {
-    const randomPictureIndex = Math.floor(Math.random() * this.pics.length);
-    return this.pics[randomPictureIndex];
-  }
-  getRandomAnswerOne () {
-    const randomAnswerOneIndex = Math.floor(Math.random() * this.possibleAnswersOne.length);
-    return this.possibleAnswersOne[randomAnswerOneIndex];
+    if (this.answer.correct) {
+      alert('this is correct!')
+    }
+    else {
+      alert('this is so wrong!')
+    }
   }
   render() {
     return (
       <div className="question">
-        <h3>What is the capital of France?</h3>
-        <img src={this.getRandomPictureURL()} />
+        <h3>{this.props.question}</h3>
+        <img src={this.props.picture}/>
         <div className="possible-choices">
-          <button className="does-this-work" onClick={this.handleClick}>{this.getRandomAnswerOne()}</button>
-          <button className="does-this-work" onClick={this.handleClick}>{this.getRandomAnswerOne()}</button>
-          <button className="does-this-work" onClick={this.handleClick}>{this.getRandomAnswerOne()}</button>
-          <button className="does-this-work" onClick={this.handleClick}>{this.getRandomAnswerOne()}</button>
-        </div>
+          {this.answers.map(answer => {
+            <button
+            className="does-this-work"
+            onClick={this.handleClick}>
+            </button>
+          })
+          }
+      </div>
       </div>
     );
   }
-}
+  }
 
-export default Question;
+
+  export default Question;
