@@ -3,19 +3,18 @@ import './Question.css';
 import PropTypes from 'prop-types';
 
 class Question extends Component {
-  propTypes = {
+  static propTypes = {
     question: PropTypes.string.isRequired,
     picture: PropTypes.string,
-    answers: PropTypes.shape ({
+    answers: PropTypes.shape({
       option: PropTypes.string.isRequired,
       correct: PropTypes.bool.isRequired
     })
   }
-  handleClick () {
+  handleClick() {
     if (this.answer.correct) {
       alert('this is correct!')
-    }
-    else {
+    } else {
       alert('this is so wrong!')
     }
   }
@@ -25,18 +24,17 @@ class Question extends Component {
         <h3>{this.props.question}</h3>
         <img src={this.props.picture}/>
         <div className="possible-choices">
-          {this.answers.map(answer => {
+          { this.answers.map(answer => {
             <button
             className="does-this-work"
             onClick={this.handleClick}>
             </button>
-          })
-          }
+          }) }
       </div>
       </div>
     );
   }
-  }
+}
 
 
-  export default Question;
+export default Question;
