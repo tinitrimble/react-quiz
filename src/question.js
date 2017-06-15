@@ -11,8 +11,8 @@ class Question extends Component {
       correct: PropTypes.bool.isRequired
     })
   }
-  handleClick(props) {
-    const itsRight = props.correct; 
+  handleClick(answer) {
+    const itsRight = answer.correct; 
     if (itsRight) {
       alert('this is correct!')
     } else {
