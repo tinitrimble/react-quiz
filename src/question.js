@@ -11,6 +11,15 @@ class Question extends Component {
       correct: PropTypes.bool.isRequired
     })
   }
+  Choices(answers) {
+    const answer = this.props.answers;
+    const listAnswers = answer.map((answer) =>
+      <button 
+        className="does-this-work"
+        onClick={this.handleClick} >
+        {listAnswers.string} 
+      </button>
+    )}
   handleClick() {
     if (this.answer.correct) {
       alert('this is correct!')
@@ -24,13 +33,10 @@ class Question extends Component {
         <h3>{this.props.question}</h3>
         <img src={this.props.picture}/>
         <div className="possible-choices">
-          {this.answers.map((answers) =>
-            <button
-              className="does-this-work"
-              onClick={this.handleClick}>
-              {answers}
-            </button>
-          )}
+          {this.Choices}
+          {this.Choices}
+          {this.Choices}
+          {this.Choices}
         </div>
       </div>
     );
