@@ -8,10 +8,10 @@ const questionData = {
   question: 'What is the capital of France?',
   picture: 'https://en.parisinfo.com/var/otcp/sites/images/node_43/node_51/node_233/seine-nuit-%7C-740x380-%7C-%C2%A9-thinkstock/12354-3-fre-FR/Seine-nuit-%7C-740x380-%7C-%C2%A9-Thinkstock.jpg',
   answers: [
-    { 
+    {
       option: 'London',
       correct: false
-    }, 
+    },
     {
       option: 'Paris',
       correct: true
@@ -19,7 +19,7 @@ const questionData = {
     {
       option: 'Rome',
       correct: false
-    }, 
+    },
     {
       option: 'Berlin',
       correct: false
@@ -36,11 +36,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">This is my test space.</p>
-<<<<<<< HEAD
         <Question question={questionData.question} picture={questionData.picture} answers={questionData.answers} />
-=======
-        <Question propTypes={questionData} />
->>>>>>> 40db4c1f5f7f9a1842181e5cb58ad2e77c4ab3d3
       </div>
     );
   }
