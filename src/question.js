@@ -11,8 +11,9 @@ class Question extends Component {
       correct: PropTypes.bool.isRequired
     })
   }
-  handleClick() {
-    if (this.props.correct) {
+  handleClick(props) {
+    const itsRight = props.correct; 
+    if (itsRight) {
       alert('this is correct!')
     } else {
       alert('this is so wrong!')
@@ -24,11 +25,11 @@ class Question extends Component {
         <h3>{this.props.question}</h3>
         <img src={this.props.picture} alt="" />
         <div className="possible-choices">
-          {this.props.answers.map((option) =>
+          {this.props.answers.map((answer) =>
             <button
               className="does-this-work"
-              onClick={this.handleClick} >
-              {this.props.option}
+              onClick={() => this.handleClick(answer)} >
+              {answer.option}
             </button>
           )}
         </div>
