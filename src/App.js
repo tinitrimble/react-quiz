@@ -36,7 +36,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">This is my test space.</p>
-        <Question propTypes= {questionData} />
+        <Question question={questionData.question} picture={questionData.picture} answers={questionData.answers} />
       </div>
     );
   }

@@ -25,13 +25,12 @@ class Question extends Component {
         <h3>{this.props.question}</h3>
         <img src={this.props.picture}/>
         <div className="possible-choices">
-          {this.answers.map(answer => {
+          {Question.answers.map((answer) => 
             <button
             className="does-this-work"
             onClick={this.handleClick}>
             </button>
-          })
-          }
+          )}
       </div>
       </div>
     );
