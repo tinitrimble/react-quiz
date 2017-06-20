@@ -4,6 +4,16 @@ import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
 
+const Question = questionData.map((question, picture, answer) =>
+  <h3>{question}</h3>
+  <img src={picture} alt="" />
+  <button
+    className="does-this-work"
+    onClick={() => this.handleClick(answer)} >
+    {answer.option}
+  </button>
+)
+
 class App extends Component {
   constructor() {
     super();

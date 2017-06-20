@@ -22,19 +22,20 @@ class Question extends Component {
   render() {
     return (
       <div className="question">
-        {this.props.question.map((question, picture, answer) =>
-          <h3>{question}</h3>
-          <img src={picture} alt="" />
-          <button
-            className="does-this-work"
-            onClick={() => this.handleClick(answer)} >
-            {answer.option}
-          </button>
-        )}
-      </div>
-    )}
+        <h3>{this.props.question}</h3>
+        <img src={this.props.picture} alt="" />
+        <div className="possible-choices">
+          {this.props.answers.map((answer) =>
+            <button
+              className="does-this-work"
+              onClick={() => this.handleClick(answer)} >
+              {answer.option}
+            </button>
+          )}
+        </div>
+        )
+        }
+        }
 
-}
 
-
-export default Question;
+        export default Question;
