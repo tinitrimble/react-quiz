@@ -4,7 +4,7 @@ import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
 
-const Question = questionData.map((question, picture, answer) =>
+const questionData = questionData.map((question, picture, answer) =>
   <h3>{question}</h3>
   <img src={picture} alt="" />
   <button
