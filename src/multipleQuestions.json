@@ -1,1 +1,130 @@
-[] 
+{
+  "question": "What is this place?",
+  "picture": "http://www.pioneerproject.net/wp-content/uploads/2013/01/deadly-premonition-twin-peaks-29.jpg",
+  "answers": [
+    {
+      "option": "The Best Western Hotel",
+      "correct": false
+    },
+    {
+      "option": "The Great Northern Hotel",
+      "correct": true
+    },
+    {
+      "option": "The Stanley Hotel",
+      "correct": false
+    },
+    {
+      "option": "The Grand Budapest Hotel",
+      "correct": false
+    }
+  ]
+},
+{
+  "question": "What state is the town of Twin Peaks in?",
+  "answers": [
+    {
+      "option": "Washington",
+      "correct": true
+    },
+    {
+      "option": "California",
+      "correct": false
+    },
+    {
+      "option": "Oregon",
+      "correct": false
+    },
+    {
+      "option": "Montana",
+      "correct": false
+    }
+  ]
+},
+{
+  "question": "Who killed Laura Palmer?",
+  "picture": "https://hollywoodhatesme.files.wordpress.com/2010/05/laura-palmer1.jpg",
+  "answers": [
+    {
+      "option": "Sheriff Harry Truman",
+      "correct": false
+    },
+    {
+      "option": "Special Agent Dale Cooper",
+      "correct": false
+    },
+    {
+      "option": "Benjamin Horne",
+      "correct": false
+    },
+    {
+      "option": "Leland Palmer",
+      "correct": true
+    }
+  ]
+},
+
+{
+  "question": "Has James always been cool?",
+  "picture": "http://ichthyosapiens.com/Film/TwinPeaks/Hurley-James.jpg",
+  "answers": [
+    {
+      "option": "James has always been cool",
+      "correct": false
+    },
+    {
+      "option": "James is the worst one",
+      "correct": true
+    }
+  ]
+},
+
+{
+  "question": "What is the name of this Twin Peaks character?",
+  "picture": "https://s-media-cache-ak0.pinimg.com/736x/c1/4a/15/c14a15017e8801895c9163564dcf2f93.jpg",
+  "answers": [
+    {
+      "option": "Dick Tremaine",
+      "correct": false
+    },
+    {
+      "option": "John Justice Wheeler",
+      "correct": true
+    },
+    {
+      "option": "Hank Jennings",
+      "correct": false
+    },
+    {
+      "option": "Bobby Briggs",
+      "correct": false
+    }
+  ]
+},
+
+{
+  "question": "Which character is Shelly not involved with?",
+  "picture": "https://i.ytimg.com/vi/d9_uQxWfw28/maxresdefault.jpg",
+  "answers": [
+    {
+      "option": "Leo Johnson",
+      "correct": false
+    },
+    {
+      "option": "Bobby Briggs",
+      "correct": false
+    },
+    {
+      "option": "Ed Hurley",
+      "correct": true
+    },
+    {
+      "option": "Gordon Cole",
+      "correct": false
+    }
+  ]
+}
+
+
+
+
