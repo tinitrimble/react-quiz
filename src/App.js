@@ -4,13 +4,6 @@ import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
 
-// try moving this into the render function
-questionData.map(question =>
-  <div class="need-a-div-name">
-    <Question question={question.question} picture={question.picture} answers={question.answers} />
-  </div>
-)
-
 class App extends Component {
   render() {
     return (
@@ -20,10 +13,13 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">This is my test space.</p>
-        {questionData.map(question =>
-          <div class="need-a-div-name">
-            <Question question={question.question} picture={question.picture} answers={question.answers} />
-          </div>
+        {questionData.map((question, index) =>
+          <Question
+            key={index}
+            text={question.text}
+            picture={question.picture}
+            answers={question.answers}
+          />
         )}
       </div>
     );
