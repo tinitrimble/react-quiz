@@ -4,23 +4,14 @@ import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
 
-const Question = questionData.map((question, picture, answer) =>
-  <h3>{question}</h3>
-  <img src={picture} alt="" />
-  <button
-    className="does-this-work"
-    onClick={() => this.handleClick(answer)} >
-    {answer.option}
-  </button>
+// try moving this into the render function
+questionData.map(question =>
+  <div class="use-the-question-component-from-line-23-here-instead">
+    Example of pulling data: {question.question}
+  </div>
 )
 
 class App extends Component {
-  constructor() {
-    super();
-    // check your browser console to see what's in questionData
-    // Once you don't need this anymore delete the constructor
-    console.log(questionData);
-  }
   render() {
     return (
       <div className="App">
@@ -29,7 +20,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">This is my test space.</p>
-        <Question question={questionData.question} picture={questionData.picture} answers={questionData.answers} />
+        {/* <Question question={question.question} picture={question.picture} answers={question.answers} /> */}
       </div>
     );
   }

@@ -12,7 +12,7 @@ class Question extends Component {
     })
   }
   handleClick(answer) {
-    const itsRight = answer.correct;
+    const itsRight = answer.correct; 
     if (itsRight) {
       alert('this is correct!')
     } else {
@@ -33,9 +33,10 @@ class Question extends Component {
             </button>
           )}
         </div>
-        )
-        }
-        }
+      </div>
+    );
+  }
+}
 
 
-        export default Question;
+export default Question;
