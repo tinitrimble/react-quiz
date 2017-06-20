@@ -19,10 +19,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">This is my test space.</p>
-        {/* 
-          Delete this comment and map questionData to Question components
-          <Question question={questionData.question} picture={questionData.picture} answers={questionData.answers} />
-        */}
+        <Question question={questionData.question} picture={questionData.picture} answers={questionData.answers} />
       </div>
     );
   }

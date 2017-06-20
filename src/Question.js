@@ -12,7 +12,7 @@ class Question extends Component {
     })
   }
   handleClick(answer) {
-    const itsRight = answer.correct; 
+    const itsRight = answer.correct;
     if (itsRight) {
       alert('this is correct!')
     } else {
@@ -22,20 +22,18 @@ class Question extends Component {
   render() {
     return (
       <div className="question">
-        <h3>{this.props.question}</h3>
-        <img src={this.props.picture} alt="" />
-        <div className="possible-choices">
-          {this.props.answers.map((answer) =>
-            <button
-              className="does-this-work"
-              onClick={() => this.handleClick(answer)} >
-              {answer.option}
-            </button>
-          )}
-        </div>
+        {this.props.question.map((question, picture, answer) =>
+          <h3>{question}</h3>
+          <img src={picture} alt="" />
+          <button
+            className="does-this-work"
+            onClick={() => this.handleClick(answer)} >
+            {answer.option}
+          </button>
+        )}
       </div>
-    );
-  }
+    )}
+
 }
 
 
