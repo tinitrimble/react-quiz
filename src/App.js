@@ -6,8 +6,8 @@ import './App.css';
 
 // try moving this into the render function
 questionData.map(question =>
-  <div class="use-the-question-component-from-line-23-here-instead">
-    Example of pulling data: {question.question}
+  <div class="need-a-div-name">
+    <Question question={question.question} picture={question.picture} answers={question.answers} />
   </div>
 )
 
@@ -20,7 +20,11 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">This is my test space.</p>
-        {/* <Question question={question.question} picture={question.picture} answers={question.answers} /> */}
+        {questionData.map(question =>
+          <div class="need-a-div-name">
+            <Question question={question.question} picture={question.picture} answers={question.answers} />
+          </div>
+        )}
       </div>
     );
   }
