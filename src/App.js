@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Question from './question.js';
+import Question from './Question.js';
 import logo from './logo.svg';
 import './App.css';
 import questionData from './multipleQuestions.json';
