@@ -1,6 +1,5 @@
-[
-{
-  "question": "What is this place?",
+[{
+  "text": "What is this place?",
   "picture": "http://www.pioneerproject.net/wp-content/uploads/2013/01/deadly-premonition-twin-peaks-29.jpg",
   "answers": [
     {
@@ -22,7 +21,7 @@
   ]
 },
 {
-  "question": "What state is the town of Twin Peaks in?",
+  "text": "What state is the town of Twin Peaks in?",
   "answers": [
     {
       "option": "Washington",
@@ -43,7 +42,7 @@
   ]
 },
 {
-  "question": "Who killed Laura Palmer?",
+  "text": "Who killed Laura Palmer?",
   "picture": "https://hollywoodhatesme.files.wordpress.com/2010/05/laura-palmer1.jpg",
   "answers": [
     {
@@ -66,7 +65,7 @@
 },
 
 {
-  "question": "Has James always been cool?",
+  "text": "Has James always been cool?",
   "picture": "http://ichthyosapiens.com/Film/TwinPeaks/Hurley-James.jpg",
   "answers": [
     {
@@ -81,7 +80,7 @@
 },
 
 {
-  "question": "What is the name of this Twin Peaks character?",
+  "text": "What is the name of this Twin Peaks character?",
   "picture": "https://s-media-cache-ak0.pinimg.com/736x/c1/4a/15/c14a15017e8801895c9163564dcf2f93.jpg",
   "answers": [
     {
@@ -104,7 +103,7 @@
 },
 
 {
-  "question": "Which character is Shelly not involved with?",
+  "text": "Which character is Shelly not involved with?",
   "picture": "https://i.ytimg.com/vi/d9_uQxWfw28/maxresdefault.jpg",
   "answers": [
     {
@@ -124,8 +123,4 @@
       "correct": false
     }
   ]
-}
-]
-
-
-
+}]

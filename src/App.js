@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Question from './Question.js';
+import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
-import questionData from './multipleQuestions.json';
-
-
 
 class App extends Component {
   render() {
