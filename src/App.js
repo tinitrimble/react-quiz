@@ -13,17 +13,16 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">This is my test space.</p>
-        {questionData.map((question, index) =>
-          <Question
-            key={index}
-            text={question.text}
-            picture={question.picture}
-            answers={question.answers}
-          />
-        )}
+        <div class="use-the-question-component-from-line-23-here-instead">
+          {questionData.map((question) =>
+            <Question
+              question={question.question}
+              picture={question.picture}
+              answers={question.answers} />
+          )}
+        </div>
       </div>
-    );
-  }
+  )}
 }
 
 export default App;
