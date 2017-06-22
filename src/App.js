@@ -3,29 +3,18 @@ import Question from './Question.js';
 import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
-
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    }
-  }
-  getInitialState() {
-    this.state = {
-      count: 0
-    }
-  }
-  handleClick(answer) {
-    if (this.answer.correct) {
-      this.setState({
-        count: this.state.count + 1
-      })
-    }
-  }
-}
+import Counter from './Counter.js';
 
 class App extends Component {
+  getInitialState() {
+    return { count: 0 };
+  }
+  handleAnswerSelected(event) {
+    this.setUserAnswer(event.currentTarget.value);
+    if (this.answer.correct) {
+      this.setState = ({count + 1 })
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -35,14 +24,16 @@ class App extends Component {
         </div>
         <p className="App-intro">This is my test space.</p>
         <div class="counter">
-          <p>Total Correct: {this.state.count}</p>
+          <p>Total correct: </p>
+          <Counter  />
         </div>
         <div class="use-the-question-component-from-line-23-here-instead">
           {questionData.map((question) =>
             <Question
               text={question.text}
               picture={question.picture}
-              answers={question.answers} />
+              answers={question.answers}
+              count={this.handleAnswerSelected} />
           )}
         </div>
       </div>
