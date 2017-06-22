@@ -6,14 +6,25 @@ import './App.css';
 import Counter from './Counter.js';
 
 class App extends Component {
-  getInitialState() {
-    return { count: 0 };
+  constructor(props) {
+    super(props);
+    this.setState({
+      count: 0,
+      currentQuestion: {questionData}
+    })
   }
-  handleAnswerSelected(event) {
+  handleAnswerSelected(answer) {
+    const itsRight = answer.correct;
     this.setUserAnswer(event.currentTarget.value);
-    if (this.answer.correct) {
-      this.setState = ({count + 1 })
-    }
+    this.setState({
+      if (itsRight) {
+        alert("Thumbs up! Damn good answer!");
+        count: count + 1;
+      }
+      else {
+        alert("My log says you are wrong");
+      }
+   })
   }
   render() {
     return (
@@ -33,7 +44,7 @@ class App extends Component {
               text={question.text}
               picture={question.picture}
               answers={question.answers}
-              count={this.handleAnswerSelected} />
+              onClick={(e) => this.handleAnswerSelected(e)} />
           )}
         </div>
       </div>
