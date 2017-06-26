@@ -34,7 +34,7 @@ class App extends Component {
         <p className="App-intro">This is my test space.</p>
         <div class="counter">
           <p>Total correct: </p>
-          <Counter  />
+          <Counter count={this.correctAnswers} />
         </div>
         <div class="use-the-question-component-from-line-23-here-instead">
           {questionData.map((question) =>

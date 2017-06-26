@@ -22,8 +22,8 @@ class Question extends Component {
             <button
               key={index}
               className="does-this-work"
-              onClick={() => this.props.onClick(answer)} />
-            {answer.option}
+              onClick={() => this.props.onClick(answer)} >
+              {answer.option}
             </button>
           )}
         </div>
