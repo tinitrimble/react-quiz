@@ -20,9 +20,10 @@ class App extends Component {
       alert("Thumbs up! Damn good answer!");
       this.setState({
         count: count + 1
-      }) else {
-        alert("My log says you are wrong");
-      }
+      })
+    }
+    else {
+      alert("My log says you are wrong");
     }
   }
   render() {
