@@ -3,11 +3,9 @@ import Question from './Question.js';
 import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
-import Counter from './Counter.js';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  componentWillMount() {
     this.setState({
       correctAnswers: 0
     })
@@ -32,11 +30,10 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">This is my test space.</p>
-        <div class="counter">
-          <p>Total correct: </p>
-          <Counter count={this.correctAnswers} />
+        <div className="counter">
+          <p>Total correct: </p> {this.correctAnswers} 
         </div>
-        <div class="use-the-question-component-from-line-23-here-instead">
+        <div className="use-the-question-component-from-line-23-here-instead">
           {questionData.map((question) =>
             <Question
               text={question.text}
