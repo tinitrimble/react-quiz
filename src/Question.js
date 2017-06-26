@@ -12,14 +12,6 @@ class Question extends Component {
     })),
     count: PropTypes.number.isRequired
   }
-  handleClick(answer) {
-    const itsRight = answer.correct;
-    if (itsRight) {
-      alert('this is correct!')
-    } else {
-      alert('this is so wrong!')
-    }
-  }
   render() {
     return (
       <div className="question">
@@ -30,7 +22,7 @@ class Question extends Component {
             <button
               key={index}
               className="does-this-work"
-              onClick={() => this.handleClick(answer)} >
+              onClick={() => this.handleAnswerSelected(answer)} >
               {answer.option}
             </button>
           )}

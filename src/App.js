@@ -16,15 +16,14 @@ class App extends Component {
   handleAnswerSelected(answer) {
     const itsRight = answer.correct;
     this.setUserAnswer(event.currentTarget.value);
-    this.setState({
-      if (itsRight) {
-        alert("Thumbs up! Damn good answer!");
-        count: count + 1;
-      }
-      else {
+    if (itsRight) {
+      alert("Thumbs up! Damn good answer!");
+      this.setState({
+        count: count + 1
+      }) else {
         alert("My log says you are wrong");
       }
-   })
+    }
   }
   render() {
     return (
@@ -44,7 +43,7 @@ class App extends Component {
               text={question.text}
               picture={question.picture}
               answers={question.answers}
-              onClick={(e) => this.handleAnswerSelected(e)} />
+              onClick={() => this.handleAnswerSelected(answer)} />
           )}
         </div>
       </div>
