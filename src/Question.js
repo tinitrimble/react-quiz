@@ -9,8 +9,7 @@ class Question extends Component {
     answers: PropTypes.arrayOf(PropTypes.shape({
       option: PropTypes.string.isRequired,
       correct: PropTypes.bool.isRequired
-    })),
-    count: PropTypes.number.isRequired
+    }))
   }
   render() {
     return (

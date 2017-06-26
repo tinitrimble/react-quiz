@@ -9,17 +9,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.setState({
-      count: 0,
-      currentQuestion: {questionData}
+      correctAnswers: 0
     })
   }
   handleAnswerSelected(answer) {
     const itsRight = answer.correct;
-    this.setUserAnswer(event.currentTarget.value);
     if (itsRight) {
       alert("Thumbs up! Damn good answer!");
       this.setState({
-        count: count + 1
+        correctAnswers: this.state.count + 1
       })
     }
     else {

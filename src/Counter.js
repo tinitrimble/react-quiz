@@ -4,7 +4,7 @@ class Counter extends Component {
   constructor(props) {
     super(props);
     this.setState({
-      count: 0
+      correctAnswers: 0
     })
   }
 }
