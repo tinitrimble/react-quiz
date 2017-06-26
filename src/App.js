@@ -34,8 +34,9 @@ class App extends Component {
           <p>Total correct: </p> {this.correctAnswers} 
         </div>
         <div className="use-the-question-component-from-line-23-here-instead">
-          {questionData.map((question) =>
+          {questionData.map((question, index) =>
             <Question
+              key={index}
               text={question.text}
               picture={question.picture}
               answers={question.answers}
