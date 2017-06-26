@@ -22,7 +22,7 @@ class Question extends Component {
             <button
               key={index}
               className="does-this-work"
-              onClick={() => {this.handleAnswerSelected}} />
+              onClick={() => this.props.onClick(answer)} />
             {answer.option}
             </button>
           )}
