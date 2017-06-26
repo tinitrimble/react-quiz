@@ -42,7 +42,7 @@ class App extends Component {
               text={question.text}
               picture={question.picture}
               answers={question.answers}
-              onClick={() => this.handleAnswerSelected(answer)} />
+              onClick={() => this.handleAnswerSelected} />
           )}
         </div>
       </div>
