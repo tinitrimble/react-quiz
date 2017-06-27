@@ -5,6 +5,27 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super ();
+    this.handleAnswerSelected = this.handleAnswerSelected.bind(this)
+  }
+  componentWillMount() {
+    this.setState({
+      correctAnswers: 0
+    })
+  }
+  handleAnswerSelected(answer) {
+    const itsRight = answer.correct;
+    if (itsRight) {
+      alert("Thumbs up! Damn good answer!");
+      this.setState({
+        correctAnswers: (this.state.correctAnswers + 1)
+      })
+    }
+    else {
+      alert("My log says you are wrong");
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -13,16 +34,21 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">This is my test space.</p>
-        <div class="use-the-question-component-from-line-23-here-instead">
-          {questionData.map((question) =>
+        <div className="counter">
+          <p>Total correct: </p> {this.state.correctAnswers} 
+        </div>
+        <div className="use-the-question-component-from-line-23-here-instead">
+          {questionData.map((question, index) =>
             <Question
-              question={question.question}
+              key={index}
+              text={question.text}
               picture={question.picture}
-              answers={question.answers} />
+              answers={question.answers}
+              onClick={this.handleAnswerSelected} />
           )}
         </div>
       </div>
-  )}
+    )}
 }
 
 export default App;

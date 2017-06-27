@@ -5,6 +5,8 @@
  
 .question img {
   width: 400px;
+  text-align: center;
+  display: inline-block;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -16,16 +18,19 @@
 }
 
 .possible-choices {
-  margin: 5px 40px 20px 250px;
+  margin-top: 5px;
+  margin-bottom: 20px;
   text-align: center;
+  display: inline-block;
 }
 
 .does-this-work {
-  margin-top: 20px;
   margin-bottom: 10px;
+  margin-top: 10px;
   background-color: rgb(229, 229, 229);
   padding: 10px;
   display: block;
-  width: 850px;
+  width: 550px;
   text-align: left;
 }
+

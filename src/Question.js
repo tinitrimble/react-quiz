@@ -9,15 +9,8 @@ class Question extends Component {
     answers: PropTypes.arrayOf(PropTypes.shape({
       option: PropTypes.string.isRequired,
       correct: PropTypes.bool.isRequired
-    }))
-  }
-  handleClick(answer) {
-    const itsRight = answer.correct; 
-    if (itsRight) {
-      alert('this is correct!')
-    } else {
-      alert('this is so wrong!')
-    }
+    })),
+    onClick: PropTypes.func.isRequired
   }
   render() {
     return (
@@ -29,7 +22,7 @@ class Question extends Component {
             <button
               key={index}
               className="does-this-work"
-              onClick={() => this.handleClick(answer)} >
+              onClick={() => this.props.onClick(answer)} >
               {answer.option}
             </button>
           )}
