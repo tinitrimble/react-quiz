@@ -5,6 +5,10 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super ();
+    this.handleAnswerSelected = this.handleAnswerSelected.bind(this)
+  }
   componentWillMount() {
     this.setState({
       correctAnswers: 0
@@ -15,7 +19,7 @@ class App extends Component {
     if (itsRight) {
       alert("Thumbs up! Damn good answer!");
       this.setState({
-        correctAnswers: this.state.count + 1
+        correctAnswers: (this.state.correctAnswers + 1)
       })
     }
     else {
@@ -31,7 +35,7 @@ class App extends Component {
         </div>
         <p className="App-intro">This is my test space.</p>
         <div className="counter">
-          <p>Total correct: </p> {this.correctAnswers} 
+          <p>Total correct: </p> {this.state.correctAnswers} 
         </div>
         <div className="use-the-question-component-from-line-23-here-instead">
           {questionData.map((question, index) =>
@@ -40,7 +44,7 @@ class App extends Component {
               text={question.text}
               picture={question.picture}
               answers={question.answers}
-              onClick={() => this.handleAnswerSelected} />
+              onClick={this.handleAnswerSelected} />
           )}
         </div>
       </div>
