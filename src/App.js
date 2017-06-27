@@ -12,7 +12,8 @@ class App extends Component {
   componentWillMount() {
     this.setState({
       correctAnswers: 0,
-      userAnswers: []
+      userAnswers: [],
+      currentQuestion: questionData[0] 
     })
   }
   handleAnswerSelected(answer) {
@@ -27,9 +28,10 @@ class App extends Component {
       console.log(answer)
     }
     this.setState({
-      userAnswers: this.state.userAnswers.concat(answer)
+      userAnswers: this.state.userAnswers.concat(answer),
+      currentQuestion: (this.state.currentQuestion + 1)
     })
-    console.log(this.state.userAnswers)
+    console.log(this.state.userAnswers);
   }
   render() {
     return (
