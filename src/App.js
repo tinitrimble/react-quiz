@@ -11,20 +11,25 @@ class App extends Component {
   }
   componentWillMount() {
     this.setState({
-      correctAnswers: 0
+      correctAnswers: 0,
+      userAnswers: []
     })
   }
   handleAnswerSelected(answer) {
     const itsRight = answer.correct;
     if (itsRight) {
-      alert("Thumbs up! Damn good answer!");
+      console.log(answer)
       this.setState({
-        correctAnswers: (this.state.correctAnswers + 1)
+        correctAnswers: (this.state.correctAnswers + 1),
       })
     }
     else {
-      alert("My log says you are wrong");
+      console.log(answer)
     }
+    this.setState({
+      userAnswers: this.state.userAnswers.concat(answer)
+    })
+    console.log(this.state.userAnswers)
   }
   render() {
     return (
@@ -35,7 +40,7 @@ class App extends Component {
         </div>
         <p className="App-intro">This is my test space.</p>
         <div className="counter">
-          <p>Total correct: </p> {this.state.correctAnswers} 
+          <p>Total correct: </p> {this.state.correctAnswers}
         </div>
         <div className="use-the-question-component-from-line-23-here-instead">
           {questionData.map((question, index) =>
