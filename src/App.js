@@ -3,6 +3,7 @@ import Question from './Question.js';
 import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
+// import Results from './Results.js';
 
 class App extends Component {
   constructor() {
@@ -13,25 +14,33 @@ class App extends Component {
     this.setState({
       correctAnswers: 0,
       userAnswers: [],
-      currentQuestion: questionData[0] 
+      currentQuestion: 0 
     })
   }
   handleAnswerSelected(answer) {
+    //const newUserAnswers[] = this.state.userAnswers.slice();
     const itsRight = answer.correct;
     if (itsRight) {
       console.log(answer)
       this.setState({
-        correctAnswers: (this.state.correctAnswers + 1),
+        correctAnswers: this.state.correctAnswers + 1,
       })
     }
     else {
       console.log(answer)
     }
     this.setState({
-      userAnswers: this.state.userAnswers.concat(answer),
-      currentQuestion: (this.state.currentQuestion + 1)
+      userAnswers: this.state.userAnswers.push(answer)
+      // userAnswers: newUserAnswers[answer],  
+      currentQuestion: this.state.currentQuestion + 1
     })
     console.log(this.state.userAnswers);
+    //if (this.state.userAnswers.length === questionNumber) {
+    //  return (
+    //  <div className="here-are-results">
+    //    <Results /> 
+    //  </div>
+    //  )} 
   }
   render() {
     return (
@@ -48,6 +57,7 @@ class App extends Component {
           {questionData.map((question, index) =>
             <Question
               key={index}
+              questionNumber={index}
               text={question.text}
               picture={question.picture}
               answers={question.answers}

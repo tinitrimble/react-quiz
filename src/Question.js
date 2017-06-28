@@ -10,7 +10,8 @@ class Question extends Component {
       option: PropTypes.string.isRequired,
       correct: PropTypes.bool.isRequired
     })),
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
+    questionNumber: PropTypes.number.isRequired
   }
   render() {
     return (
@@ -22,7 +23,7 @@ class Question extends Component {
             <button
               key={index}
               className="does-this-work"
-              onClick={() => this.props.onClick(answer)} >
+              onClick={() => this.props.onClick(answer, this.props.questionNumber)} >
               {answer.option}
             </button>
           )}
