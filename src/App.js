@@ -14,33 +14,19 @@ class App extends Component {
     this.setState({
       correctAnswers: 0,
       userAnswers: [],
-      currentQuestion: 0 
     })
   }
-  handleAnswerSelected(answer) {
-    //const newUserAnswers[] = this.state.userAnswers.slice();
-    const itsRight = answer.correct;
-    if (itsRight) {
-      console.log(answer)
-      this.setState({
-        correctAnswers: this.state.correctAnswers + 1,
-      })
-    }
-    else {
-      console.log(answer)
-    }
+  handleAnswerSelected(answer, questionNumber) {
+    const updatedUserAnswers = this.state.userAnswers.slice();
+    updatedUserAnswers[questionNumber] = answer
     this.setState({
-      userAnswers: this.state.userAnswers.push(answer)
-      // userAnswers: newUserAnswers[answer],  
-      currentQuestion: this.state.currentQuestion + 1
-    })
-    console.log(this.state.userAnswers);
-    //if (this.state.userAnswers.length === questionNumber) {
-    //  return (
-    //  <div className="here-are-results">
-    //    <Results /> 
-    //  </div>
-    //  )} 
+      userAnswers: updatedUserAnswers
+    });
+  }
+  getCorrectAnswerCount() {
+    return this.state.userAnswers
+      .filter(answer => answer.correct)
+      .length;
   }
   render() {
     return (
@@ -51,7 +37,7 @@ class App extends Component {
         </div>
         <p className="App-intro">This is my test space.</p>
         <div className="counter">
-          <p>Total correct: </p> {this.state.correctAnswers}
+          <p>Total correct: </p> {this.getCorrectAnswerCount()}
         </div>
         <div className="use-the-question-component-from-line-23-here-instead">
           {questionData.map((question, index) =>
@@ -64,6 +50,10 @@ class App extends Component {
               onClick={this.handleAnswerSelected} />
           )}
         </div>
+        {this.state.completed &&
+            <div className="you-did-it">
+            </div>
+        }
       </div>
     )}
 }
