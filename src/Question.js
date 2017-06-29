@@ -11,7 +11,8 @@ class Question extends Component {
       correct: PropTypes.bool.isRequired
     })),
     onClick: PropTypes.func.isRequired,
-    questionNumber: PropTypes.number.isRequired
+    questionNumber: PropTypes.number.isRequired,
+    userHasAnswered: PropTypes.bool.isRequired
   }
   render() {
     return (
@@ -23,7 +24,8 @@ class Question extends Component {
             <button
               key={index}
               className="does-this-work"
-              onClick={() => this.props.onClick(answer, this.props.questionNumber)} >
+              onClick={() => this.props.onClick(answer, this.props.questionNumber)} 
+              disabled={this.props.userHasAnswered} >
               {answer.option}
             </button>
           )}

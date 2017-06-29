@@ -47,7 +47,8 @@ class App extends Component {
               text={question.text}
               picture={question.picture}
               answers={question.answers}
-              onClick={this.handleAnswerSelected} />
+              onClick={this.handleAnswerSelected} 
+              userHasAnswered={!!this.state.userAnswers[index]} />
           )}
         </div>
         {this.state.completed &&
