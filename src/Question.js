@@ -16,7 +16,8 @@ class Question extends Component {
   }
   render() {
     return (
-      <div className="question">
+      <div 
+        className={(this.props.userHasAnswered ? "answered" : "question")} >
         <h3>{this.props.text}</h3>
         <img src={this.props.picture} alt="" />
         <div className="possible-choices">
@@ -24,8 +25,8 @@ class Question extends Component {
             <button
               key={index}
               className="does-this-work"
-              onClick={() => this.props.onClick(answer, this.props.questionNumber)} 
-              disabled={this.props.userHasAnswered} >
+              onClick={() => this.props.onClick(answer, this.props.questionNumber)}
+              disabled={this.props.userHasAnswered}>
               {answer.option}
             </button>
           )}

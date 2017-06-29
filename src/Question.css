@@ -17,6 +17,13 @@
   margin: 30px 30px;
 }
 
+.answered {
+  border: 1px black solid;
+  background-color: yellow;
+  padding: 10px 10px;
+  margin: 30px 30px;
+}
+
 .possible-choices {
   margin-top: 5px;
   margin-bottom: 20px;
@@ -34,3 +41,6 @@
   text-align: left;
 }
 
+.answered {
+  background-color: blue;
+}
