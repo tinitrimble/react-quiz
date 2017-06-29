@@ -14,10 +14,19 @@ class Question extends Component {
     questionNumber: PropTypes.number.isRequired,
     userHasAnswered: PropTypes.bool.isRequired
   }
+  getQuestionClassName() {
+    const questionClassName = {
+      correct ? 'answered' : 'wrong-answer'
+    }
+    if (this.props.userHasAnswered) {
+      return {questionClassName};
+    } else {
+      return 'question';
+    }
+  }
   render() {
     return (
-      <div 
-        className={(this.props.userHasAnswered ? "answered" : "question")} >
+      <div className={this.getQuestionClassName} >
         <h3>{this.props.text}</h3>
         <img src={this.props.picture} alt="" />
         <div className="possible-choices">

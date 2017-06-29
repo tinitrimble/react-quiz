@@ -19,9 +19,21 @@
 
 .answered {
   border: 1px black solid;
+  background-color: #aab4c4;
+  padding: 10px 10px;
+  margin: 30px 30px;
+}
+
+.wrong-answer {
+  border: 1px black solid;
   background-color: yellow;
   padding: 10px 10px;
   margin: 30px 30px;
+}
+
+.answered button {
+  background-color: black;
+  color: white;
 }
 
 .possible-choices {
@@ -41,6 +53,3 @@
   text-align: left;
 }
 
-.answered {
-  background-color: blue;
-}
