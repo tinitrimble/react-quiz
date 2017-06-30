@@ -12,21 +12,26 @@ class Question extends Component {
     })),
     onClick: PropTypes.func.isRequired,
     questionNumber: PropTypes.number.isRequired,
-    userHasAnswered: PropTypes.bool.isRequired
+    userAnswer: PropTypes.bool
   }
   getQuestionClassName() {
-    const questionClassName = {
-      correct ? 'answered' : 'wrong-answer'
-    }
-    if (this.props.userHasAnswered) {
-      return {questionClassName};
+    const itsright =
+      if (userAnswer && this.props.answers.correct) {
+        userAnswer = true;
+      } else {
+        userAnswer = false;
+      }
+    if (this.props.userAnswer && itsright) {
+      console.log('answer');
+    } else if (this.props.userAnswer && !(this.props.userAnswer.correct)) {
+      console.log('wrong-answer');
     } else {
-      return 'question';
+      console.log('question');
     }
   }
   render() {
     return (
-      <div className={this.getQuestionClassName} >
+      <div className={this.getQuestionClassName()} >
         <h3>{this.props.text}</h3>
         <img src={this.props.picture} alt="" />
         <div className="possible-choices">
@@ -35,7 +40,7 @@ class Question extends Component {
               key={index}
               className="does-this-work"
               onClick={() => this.props.onClick(answer, this.props.questionNumber)}
-              disabled={this.props.userHasAnswered}>
+              disabled={!!this.props.userAnswer}>
               {answer.option}
             </button>
           )}
