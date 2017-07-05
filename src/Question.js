@@ -18,8 +18,8 @@ class Question extends Component {
   getQuestionClassName() {
     return classNames({
       question: true,
-      rightAnswer: (this.props.userAnswer && (this.props.answers.correct = true)) ? true : false,  
-      wrongAnswer: (this.props.userAnswer && (this.props.answers.correct = false)) ? true : false 
+      rightAnswer: this.props.userAnswer && (this.props.answers.correct === true),  
+      wrongAnswer: this.props.userAnswer && (this.props.answers.correct === false)  
     });
   }
   render() {
