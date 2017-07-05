@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Question.css';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 class Question extends Component {
   static propTypes = {
@@ -15,19 +16,12 @@ class Question extends Component {
     userAnswer: PropTypes.bool
   }
   getQuestionClassName() {
-    const itsright =
-      if (userAnswer && this.props.answers.correct) {
-        userAnswer = true;
-      } else {
-        userAnswer = false;
-      }
-    if (this.props.userAnswer && itsright) {
-      console.log('answer');
-    } else if (this.props.userAnswer && !(this.props.userAnswer.correct)) {
-      console.log('wrong-answer');
-    } else {
-      console.log('question');
-    }
+    return classNames({
+      question: true,
+      answered: false,
+      rightAnswer: false,
+      wrongAnswer: false
+    })
   }
   render() {
     return (
