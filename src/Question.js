@@ -16,12 +16,29 @@ class Question extends Component {
     userAnswer: PropTypes.bool
   }
   getQuestionClassName() {
-    return classNames({
-      question: true,
-      answered: false,
-      rightAnswer: false,
-      wrongAnswer: false
-    })
+    if (this.props.userAnswer && (this.props.answers.correct = true)) {
+      return classNames({
+        question : false,
+        answered : true,
+        rightAnswer : true,
+        wrongAnswer: false,
+      })
+    } else if (this.props.userAnswer && (this.props.answers.correct = false)) {
+      return classNames({
+        question : false,
+        answered : true,
+        rightAnswer : false,
+        wrongAnswer : true,
+      })
+    }
+    else {
+      return classNames({
+        question: true,
+        answered: false,
+        rightAnswer: false,
+        wrongAnswer: false
+      })
+    }
   }
   render() {
     return (

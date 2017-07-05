@@ -19,21 +19,17 @@
 
 .answered {
   border: 1px black solid;
-  background-color: #aab4c4;
   padding: 10px 10px;
   margin: 30px 30px;
+  background-color: #9e9c9c;
 }
 
-.wrong-answer {
-  border: 1px black solid;
-  background-color: yellow;
-  padding: 10px 10px;
-  margin: 30px 30px;
+.rightAnswer button {
+  background-color: green;
 }
 
-.answered button {
-  background-color: black;
-  color: white;
+.wrongAnswer button {
+  background-color: red;
 }
 
 .possible-choices {
