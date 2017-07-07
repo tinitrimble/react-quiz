@@ -3,6 +3,7 @@ import Question from './Question.js';
 import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
+import possibleResults from './possibleResults.json';
 
 class App extends Component {
   constructor() {
