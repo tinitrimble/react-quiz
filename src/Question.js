@@ -21,9 +21,20 @@ class Question extends Component {
   getQuestionClassName() {
     return classNames({
       question: true,
-      rightAnswer: this.props.userAnswer && (this.props.userAnswer.correct === true),  
-      wrongAnswer: this.props.userAnswer && (this.props.userAnswer.correct === false)  
+      rightAnswer: this.props.userAnswer && (this.props.userAnswer.correct === true),
+      wrongAnswer: this.props.userAnswer && (this.props.userAnswer.correct === false)
     });
+  }
+  getButtonClassName(answer) {
+    const classes = { choice: true };
+    if (this.props.userAnswer && this.props.userAnswer.option === answer.option) {
+      if (this.props.userAnswer.correct) {
+        classes.rightAnswer = true;
+      } else {
+        classes.wrongAnswer = true;
+      }
+    }
+    return classNames(classes);
   }
   render() {
     return (
@@ -34,7 +45,7 @@ class Question extends Component {
           {this.props.answers.map((answer, index) =>
             <button
               key={index}
-              className="does-this-work"
+              className={this.getButtonClassName(answer)}
               onClick={() => this.props.onClick(answer, this.props.questionNumber)}
               disabled={!!this.props.userAnswer}>
               {answer.option}

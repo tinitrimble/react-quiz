@@ -1,3 +1,8 @@
+.question {
+  border: 1px black solid;
+  padding: 10px 10px;
+  margin: 30px 30px;
+}
 
 .question h3 {
   font-size: 26px;
@@ -11,32 +16,14 @@
   margin-bottom: 20px;
 }
 
-.question {
-  border: 1px black solid;
-  padding: 10px 10px;
-  margin: 30px 30px;
-}
-
-.rightAnswer button {
-  background-color: #bee2d5;
-}
-
-.rightAnswer:active {
-  color: black;
-}
-
-.wrongAnswer button {
-  background-color: #ddbaba;
-}
-
-.possible-choices {
+.question .possible-choices {
   margin-top: 5px;
   margin-bottom: 20px;
   text-align: center;
   display: inline-block;
 }
 
-.does-this-work {
+.question .possible-choices .choice {
   margin-bottom: 10px;
   margin-top: 10px;
   background-color: rgb(229, 229, 229);
@@ -45,4 +32,14 @@
   width: 550px;
   text-align: left;
 }
+
+.question .possible-choices .choice.rightAnswer {
+  background-color: #bee2d5;
+}
+
+.question .possible-choices .choice.wrongAnswer {
+  background-color: #ddbaba;
+}
+
+
 
