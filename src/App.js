@@ -12,20 +12,21 @@ class App extends Component {
   }
   componentWillMount() {
     this.setState({
-      correctAnswers: 0
+      correctAnswers: 0,
+      userAnswers: [],
     })
   }
-  handleAnswerSelected(answer) {
-    const itsRight = answer.correct;
-    if (itsRight) {
-      alert("Thumbs up! Damn good answer!");
-      this.setState({
-        correctAnswers: (this.state.correctAnswers + 1)
-      })
-    }
-    else {
-      alert("My log says you are wrong");
-    }
+  handleAnswerSelected(answer, questionNumber) {
+    const updatedUserAnswers = this.state.userAnswers.slice();
+    updatedUserAnswers[questionNumber] = answer
+    this.setState({
+      userAnswers: updatedUserAnswers
+    });
+  }
+  getCorrectAnswerCount() {
+    return this.state.userAnswers
+      .filter(answer => answer.correct)
+      .length;
   }
   render() {
     return (
@@ -36,18 +37,24 @@ class App extends Component {
         </div>
         <p className="App-intro">This is my test space.</p>
         <div className="counter">
-          <p>Total correct: </p> {this.state.correctAnswers} 
+          <p>Total correct: </p> {this.getCorrectAnswerCount()}
         </div>
         <div className="use-the-question-component-from-line-23-here-instead">
           {questionData.map((question, index) =>
             <Question
               key={index}
+              questionNumber={index}
               text={question.text}
               picture={question.picture}
               answers={question.answers}
-              onClick={this.handleAnswerSelected} />
+              onClick={this.handleAnswerSelected} 
+              userAnswer={this.state.userAnswers[index]}/> 
           )}
         </div>
+        {this.state.completed &&
+            <div className="you-did-it">
+            </div>
+        }
       </div>
     )}
 }
