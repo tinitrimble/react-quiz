@@ -17,19 +17,16 @@
   margin: 30px 30px;
 }
 
-.answered {
-  border: 1px black solid;
-  padding: 10px 10px;
-  margin: 30px 30px;
-  background-color: #9e9c9c;
+.rightAnswer button {
+  background-color: #bee2d5;
 }
 
-.rightAnswer button {
-  background-color: green;
+.rightAnswer:active {
+  color: black;
 }
 
 .wrongAnswer button {
-  background-color: red;
+  background-color: #ddbaba;
 }
 
 .possible-choices {

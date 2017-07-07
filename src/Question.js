@@ -13,13 +13,16 @@ class Question extends Component {
     })),
     onClick: PropTypes.func.isRequired,
     questionNumber: PropTypes.number.isRequired,
-    userAnswer: PropTypes.bool
+    userAnswer: PropTypes.shape({
+      option: PropTypes.string.isRequired,
+      correct: PropTypes.string.isRequired
+    })
   }
   getQuestionClassName() {
     return classNames({
       question: true,
-      rightAnswer: this.props.userAnswer && (this.props.answers.correct === true),  
-      wrongAnswer: this.props.userAnswer && (this.props.answers.correct === false)  
+      rightAnswer: this.props.userAnswer && (this.props.userAnswer.correct === true),  
+      wrongAnswer: this.props.userAnswer && (this.props.userAnswer.correct === false)  
     });
   }
   render() {
