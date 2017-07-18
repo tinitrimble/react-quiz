@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Results.css';
 
 class Results extends Component {
   static propTypes = {
@@ -17,7 +18,7 @@ class Results extends Component {
         <p>{this.props.summary}</p>
         <div className= "share-this">
           <a href="www.google.com">Share your result with your friends!</a>
-          <img src="https://www.butsch-meier.de/wp-content/uploads/facebook-footer.png" href="www.facebook.com" />
+          <img className="fbpic" src="https://www.butsch-meier.de/wp-content/uploads/facebook-footer.png" href="www.facebook.com" />
         </div>
       </div>
     )
