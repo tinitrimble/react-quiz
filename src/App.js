@@ -3,7 +3,8 @@ import Question from './Question.js';
 import questionData from './multipleQuestions.json';
 import logo from './logo.svg';
 import './App.css';
-// import Results from './Results.js';
+import possibleResults from './possibleResults.json';
+import Results from './Results.js';
 
 class App extends Component {
   constructor() {
@@ -28,6 +29,18 @@ class App extends Component {
       .filter(answer => answer.correct)
       .length;
   }
+  getResults() {
+    const totalQuestions = questionData.length;
+    const totalAnswered = this.state.userAnswers.length;
+    if ( totalAnswered === totalQuestions ) {
+      const score = this.getCorrectAnswerCount() / totalQuestions;
+      const resultNumber = Math.ceil(possibleResults.length * score);
+      return <Results
+        headline={possibleResults[resultNumber].headline}
+        resultpic={possibleResults[resultNumber].resultpic}
+        summary={possibleResults[resultNumber].summary} />
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -47,14 +60,11 @@ class App extends Component {
               text={question.text}
               picture={question.picture}
               answers={question.answers}
-              onClick={this.handleAnswerSelected} 
-              userAnswer={this.state.userAnswers[index]}/> 
+              onClick={this.handleAnswerSelected}
+              userAnswer={this.state.userAnswers[index]}/>
           )}
         </div>
-        {this.state.completed &&
-            <div className="you-did-it">
-            </div>
-        }
+        {this.getResults()}
       </div>
     )}
 }
