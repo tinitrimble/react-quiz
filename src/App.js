@@ -46,11 +46,10 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Quizzlydoo</h2>
         </div>
-        <p className="App-intro">This is my test space.</p>
         <div className="counter">
-          <p>Total correct: </p> {this.getCorrectAnswerCount()}
+          <p>Score: </p> {this.getCorrectAnswerCount()}
         </div>
         <div className="use-the-question-component-from-line-23-here-instead">
           {questionData.map((question, index) =>
