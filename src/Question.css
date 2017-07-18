@@ -2,6 +2,8 @@
   border: 1px #6ec8b2 solid;
   padding: 10px 10px;
   margin: 30px 250px;
+  background-color: white;
+  border-radius: 50px;
 }
 
 .question h3 {
@@ -31,6 +33,11 @@
   display: block;
   width: 550px;
   text-align: left;
+  border-radius: 20px; 
+}
+
+.question .possible-choices .choice:hover {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .question .possible-choices .choice.rightAnswer {
