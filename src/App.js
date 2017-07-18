@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Question from './Question.js';
 import questionData from './multipleQuestions.json';
-import logo from './logo.svg';
+import logo from './q2.svg';
 import './App.css';
 import possibleResults from './possibleResults.json';
 import Results from './Results.js';
