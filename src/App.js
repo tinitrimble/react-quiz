@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Question from './Question.js';
-import questionData from './multipleQuestions.json';
 import logo from './q2.svg';
 import './App.css';
-import possibleResults from './possibleResults.json';
+import quizInfo from './quiz.json';
 import Results from './Results.js';
 
 class App extends Component {
@@ -30,15 +29,15 @@ class App extends Component {
       .length;
   }
   getResults() {
-    const totalQuestions = questionData.length;
+    const totalQuestions = quizInfo.questions.length;
     const totalAnswered = this.state.userAnswers.length;
     if ( totalAnswered === totalQuestions ) {
       const score = this.getCorrectAnswerCount() / totalQuestions;
-      const resultNumber = Math.round((possibleResults.length - 1) * score);
+      const resultNumber = Math.round((quizInfo.results.length - 1) * score);
       return <Results
-        headline={possibleResults[resultNumber].headline}
-        resultpic={possibleResults[resultNumber].resultpic}
-        summary={possibleResults[resultNumber].summary} />
+        headline={quizInfo.results[resultNumber].headline}
+        resultpic={quizInfo.results[resultNumber].resultpic}
+        summary={quizInfo.results[resultNumber].summary} />
     }
   }
   render() {
@@ -50,12 +49,12 @@ class App extends Component {
         </div>
         <div className="quiz-title">
           <h1>How well do you know Twin Peaks?</h1>
-      </div>
+        </div>
         <div className="counter">
           <p>Score: </p> {this.getCorrectAnswerCount()}
         </div>
         <div className="use-the-question-component-from-line-23-here-instead">
-          {questionData.map((question, index) =>
+          {quizInfo.questions.map((question, index) =>
             <Question
               key={index}
               questionNumber={index}
