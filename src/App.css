@@ -6,6 +6,7 @@
 .App-logo {
   animation: App-logo-spin infinite 10s linear;
   height: 90px;
+  margin-right: 10px;
 }
 
 .App-header {
@@ -23,4 +24,10 @@
   0% { transform: rotate(-30deg); }
   50% { transform: rotate(30deg); }
   100% { transform: rotate(-30deg); }
+}
+
+.App .quiz-title h1 {
+  font-size: 36px;
+  margin-top: 20px;
+  text-align: center;
 }

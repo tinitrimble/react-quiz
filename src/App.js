@@ -34,7 +34,7 @@ class App extends Component {
     const totalAnswered = this.state.userAnswers.length;
     if ( totalAnswered === totalQuestions ) {
       const score = this.getCorrectAnswerCount() / totalQuestions;
-      const resultNumber = Math.ceil(possibleResults.length * score);
+      const resultNumber = Math.round((possibleResults.length - 1) * score);
       return <Results
         headline={possibleResults[resultNumber].headline}
         resultpic={possibleResults[resultNumber].resultpic}
@@ -48,6 +48,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Quizzlydoo</h2>
         </div>
+        <div className="quiz-title">
+          <h1>How well do you know Twin Peaks?</h1>
+      </div>
         <div className="counter">
           <p>Score: </p> {this.getCorrectAnswerCount()}
         </div>
