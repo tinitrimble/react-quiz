@@ -45,7 +45,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Quizzlydoo</h2>
+          <h2>Quizzelydoo</h2>
         </div>
         <div className="quiz-title">
           <h1>How well do you know Twin Peaks?</h1>
