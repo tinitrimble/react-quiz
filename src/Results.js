@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Results.css';
+import scrollToElement from 'scroll-to-element';
 
 class Results extends Component {
   static propTypes = {
@@ -8,6 +9,13 @@ class Results extends Component {
     headline: PropTypes.string.isRequired,
     resultpic: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
+  }
+  componentDidMount() {
+    scrollToElement('.result-box', {
+      offset: 400,
+      align: 'bottom',
+      duration: 500
+    })
   }
   render() {
     return (

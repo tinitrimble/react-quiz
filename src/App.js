@@ -4,7 +4,6 @@ import logo from './q2.svg';
 import './App.css';
 import quizInfo from './quiz.json';
 import Results from './Results.js';
-import scrollToElement from 'scroll-to-element';
 
 class App extends Component {
   constructor() {
@@ -36,12 +35,6 @@ class App extends Component {
       const score = this.getCorrectAnswerCount() / totalQuestions;
       const resultNumber = Math.round((quizInfo.results.length - 1) * score);
       return <Results
-        ref={() => scrollToElement('.results', {
-          offset: 500,
-          align: 'bottom',
-          ease: 'in-quad',
-          duration: 500
-        })} 
         headline={quizInfo.results[resultNumber].headline}
         resultpic={quizInfo.results[resultNumber].resultpic}
         summary={quizInfo.results[resultNumber].summary} />
