@@ -45,7 +45,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Quizzlydoo</h2>
+          <h2>Quizzelydoo</h2>
         </div>
         <div className="quiz-title">
           <h1>How well do you know Twin Peaks?</h1>
@@ -53,7 +53,7 @@ class App extends Component {
         <div className="counter">
           <p>Score: </p> {this.getCorrectAnswerCount()}
         </div>
-        <div className="use-the-question-component-from-line-23-here-instead">
+        <div className="question-div">
           {quizInfo.questions.map((question, index) =>
             <Question
               key={index}
