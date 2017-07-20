@@ -65,7 +65,9 @@ class App extends Component {
               userAnswer={this.state.userAnswers[index]}/>
           )}
         </div>
-        {this.getResults()}
+        <div className="results">
+          {this.getResults()}
+        </div>
       </div>
     )}
 }
