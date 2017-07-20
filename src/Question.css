@@ -4,6 +4,9 @@
   margin: 30px 250px;
   background-color: white;
   border-radius: 50px;
+  min-width: 400px;
+  text-align: center;
+  display: block;
 }
 
 .question h3 {
@@ -11,7 +14,8 @@
 }
  
 .question img {
-  width: 400px;
+  min-width: 40%;
+  max-width: 60%;
   text-align: center;
   display: inline-block;
   margin-top: 10px;
@@ -22,7 +26,7 @@
   margin-top: 5px;
   margin-bottom: 20px;
   text-align: center;
-  display: inline-block;
+  display: block;
 }
 
 .question .possible-choices .choice {
@@ -30,8 +34,7 @@
   margin-top: 10px;
   background-color: rgb(229, 229, 229);
   padding: 10px;
-  display: block;
-  width: 550px;
+  width: 80%;
   text-align: left;
   border-radius: 20px; 
 }
@@ -47,6 +50,5 @@
 .question .possible-choices .choice.wrongAnswer {
   background-color: #ddbaba;
 }
-
 
 

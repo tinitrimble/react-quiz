@@ -53,7 +53,7 @@ class App extends Component {
         <div className="counter">
           <p>Score: </p> {this.getCorrectAnswerCount()}
         </div>
-        <div className="use-the-question-component-from-line-23-here-instead">
+        <div className="question-div">
           {quizInfo.questions.map((question, index) =>
             <Question
               key={index}
