@@ -1,7 +1,7 @@
 .question {
   border: 1px #6ec8b2 solid;
-  padding: 10px 10px;
-  margin: 30px 250px;
+  padding: 15px 10px;
+  margin: 25px 250px;
   background-color: white;
   border-radius: 50px;
   text-align: center;
@@ -10,19 +10,20 @@
 
 .question h3 {
   font-size: 26px;
+  margin-top: 10px;
 }
  
 .question img {
   max-width: 60%;
   text-align: center;
   display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .question .possible-choices {
   margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
   display: block;
 }
