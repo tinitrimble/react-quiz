@@ -4,6 +4,7 @@ import logo from './q2.svg';
 import './App.css';
 import quizInfo from './quiz.json';
 import Results from './Results.js';
+import Scroll from 'react-scroll';
 
 class App extends Component {
   constructor() {
@@ -40,6 +41,14 @@ class App extends Component {
         summary={quizInfo.results[resultNumber].summary} />
     }
   }
+  onQuizComplete() {
+    const Element = Scroll.Element;
+    const Events = Scroll.Events;
+    const scroll = Scroll.animateScroll;
+    if (this.score) {
+      scroll.scrollTo(this.getResults());
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -65,7 +74,9 @@ class App extends Component {
               userAnswer={this.state.userAnswers[index]}/>
           )}
         </div>
-        {this.getResults()}
+        <div className="results">
+          {this.getResults()}
+        </div>
       </div>
     )}
 }

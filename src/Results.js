@@ -4,7 +4,7 @@ import './Results.css';
 
 class Results extends Component {
   static propTypes = {
-    score: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
     headline: PropTypes.string.isRequired,
     resultpic: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
