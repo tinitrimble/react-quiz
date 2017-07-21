@@ -22,7 +22,8 @@ class Question extends Component {
     return classNames({
       question: true,
       rightAnswer: this.props.userAnswer && (this.props.userAnswer.correct === true),
-      wrongAnswer: this.props.userAnswer && (this.props.userAnswer.correct === false)
+      wrongAnswer: this.props.userAnswer && (this.props.userAnswer.correct === false),
+      answered: this.props.userAnswer
     });
   }
   getButtonClassName(answer) {
@@ -34,6 +35,11 @@ class Question extends Component {
         classes.wrongAnswer = true;
       }
     }
+    if (!!this.props.userAnswer) {
+      classes.answered = true;
+     } else {
+       classes.answered = false;
+     }
     return classNames(classes);
   }
   render() {
