@@ -10,18 +10,19 @@ class Introquiz extends Component {
   }
   render() {
     return (
-        <div className="quiz-title">
-          <h1>{this.props.quiztitle}</h1>
-          <img src={this.props.intropic}  className="Quiz-pic" />
+      <div className="quiz-title">
+        <h1>{this.props.quiztitle}</h1>
+        <img src={this.props.intropic}  className="Quiz-pic" />
+        <div className="sum">
           {this.props.quizsummary}
-          <button className="begin-quiz">Begin Quiz</button> 
         </div>
+        <button className="begin-quiz">Begin Quiz</button>
+      </div>
     )
   }
 }
 
-import scrollToElement from 'scroll-to-element';
-
+export default Introquiz;
 
 
 

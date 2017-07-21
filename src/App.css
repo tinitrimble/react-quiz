@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #fcfcf4;
+  background-color: #f2f9f9;
 }
 
 .App-logo {
@@ -27,14 +27,4 @@
   100% { transform: rotate(-30deg); }
 }
 
-.App .quiz-title h1 {
-  font-size: 48px;
-  margin-top: 40px;
-  text-align: center;
-  color: #59605f;
-}
 
-.counter {
-  margin-bottom: 26px;
-  color: #59605f;
-}

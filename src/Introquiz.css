@@ -1,0 +1,31 @@
+.App .quiz-title {
+  text-align: center;
+}
+
+.App .quiz-title h1 {
+  font-size: 48px;
+  margin-top: 30px;
+  text-align: center;
+  color: #59605f;
+}
+
+.App .sum {
+  margin: 25px 5px 25px 5px;
+  color: #59605f;
+  display: block;
+}
+
+.App .Quiz-pic {
+  display: block;
+  margin: auto auto;
+  border-radius: 10px;
+  max-height: 310px;
+}
+
+.App .begin-quiz {
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #6EC8B2;
+  margin-bottom: 30px;
+}

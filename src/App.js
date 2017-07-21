@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Introquiz from './Introquiz.js';
+import Counter from './Counter.js';
 import Question from './Question.js';
 import logo from './q2.svg';
 import './App.css';
@@ -47,27 +49,22 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Quizzelydoo</h2>
         </div>
-        <div className="quiz-title">
-          <h1>How well do you know Twin Peaks?</h1>
-        </div>
-        <div className="counter">
-          <p>Score: </p> {this.getCorrectAnswerCount()}
-        </div>
-        <div className="question-div">
-          {quizInfo.questions.map((question, index) =>
-            <Question
-              key={index}
-              questionNumber={index}
-              text={question.text}
-              picture={question.picture}
-              answers={question.answers}
-              onClick={this.handleAnswerSelected}
-              userAnswer={this.state.userAnswers[index]}/>
-          )}
-        </div>
-        <div className="results">
-          {this.getResults()}
-        </div>
+        <Introquiz
+          quiztitle={quizInfo.quizheadline.quiztitle}
+          intropic={quizInfo.quizheadline.intropic}
+          quizsummary={quizInfo.quizheadline.quizsummary} />
+        <Counter totalscore={this.getCorrectAnswerCount} />
+        {quizInfo.questions.map((question, index) =>
+          <Question
+            key={index}
+            questionNumber={index}
+            text={question.text}
+            picture={question.picture}
+            answers={question.answers}
+            onClick={this.handleAnswerSelected}
+            userAnswer={this.state.userAnswers[index]}/>
+        )}
+        {this.getResults()}
       </div>
     )}
 }

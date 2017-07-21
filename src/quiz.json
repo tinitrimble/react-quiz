@@ -298,6 +298,12 @@
       "resultpic": "https://media.giphy.com/media/zDblGyoaNqwLu/giphy.gif",
       "summary": "You've watched episode after episode, scrutinizing the details for answers. You know and love every character of the show and have probably actually been to the Black Lodge."
     }
-  ]
+  ],
+  "quizheadline":
+  {
+    "quiztitle": "How well do you know Twin Peaks?",
+    "intropic": "https://twinpeaksfreaks.files.wordpress.com/2014/05/audrey3.jpg",
+    "quizsummary": "Think you know everything there is to know about Twin Peaks? Take this quiz to find out!"
+  }
 }
 
