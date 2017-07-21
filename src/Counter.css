@@ -1,0 +1,8 @@
+.counter-info {
+  border: 1px solid black;
+  float: right;
+  position: fixed;
+  background-color: white;
+  color: black;
+  padding: 20px 10px;
+}
