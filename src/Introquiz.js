@@ -18,7 +18,7 @@ class Introquiz extends Component {
         <div className="sum">
           {this.props.quizsummary}
         </div>
-        <button className="begin-quiz" onClick={this.props.handleQuizStart}>Begin Quiz</button>
+        <button className="begin-quiz" onClick={this.handleQuizStart}>Begin Quiz</button>
       </div>
     )
   }

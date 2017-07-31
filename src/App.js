@@ -13,6 +13,7 @@ class App extends Component {
   constructor() {
     super ();
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this)
+    this.handleQuizStart = this.handleQuizStart.bind(this)
   }
   componentWillMount() {
     this.setState({
@@ -22,9 +23,7 @@ class App extends Component {
     })
   }
   handleQuizStart() {
-    this.setState({
-      showIntro: false
-    })
+    this.setState({ showIntro: false })
   }
   handleAnswerSelected(answer, questionNumber) {
     const updatedUserAnswers = this.state.userAnswers.slice();
