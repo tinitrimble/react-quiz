@@ -7,7 +7,8 @@ class Introquiz extends Component {
   static propTypes = {
     quiztitle: PropTypes.string.isRequired,
     intropic: PropTypes.string,
-    quizsummary: PropTypes.string
+    quizsummary: PropTypes.string,
+    onClick: PropTypes.func.isRequired
   }
   render() {
     return (
@@ -17,7 +18,7 @@ class Introquiz extends Component {
         <div className="sum">
           {this.props.quizsummary}
         </div>
-        <button className="begin-quiz">Begin Quiz</button>
+        <button className="begin-quiz" onClick={this.props.onClick}>Begin Quiz</button>
       </div>
     )
   }

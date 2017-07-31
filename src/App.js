@@ -18,6 +18,7 @@ class App extends Component {
     this.setState({
       correctAnswers: 0,
       userAnswers: [],
+      showIntro: true
     })
   }
   handleAnswerSelected(answer, questionNumber) {
@@ -51,6 +52,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2 className="page-name">Quizzelydoo</h2>
         </div>
+        {if (showIntro) => {
         <div className="Introduction">
           <Adbox />
           <Introquiz
@@ -59,6 +61,7 @@ class App extends Component {
             quizsummary={quizInfo.quizheadline.quizsummary} />
           <Adboxtwo />
         </div>
+        } else {
         <Counter
           totalscore={this.getCorrectAnswerCount()} />
         {quizInfo.questions.map((question, index) =>
@@ -72,6 +75,7 @@ class App extends Component {
             userAnswer={this.state.userAnswers[index]}/>
         )}
         {this.getResults()}
+        }
       </div>
     )}
 }
