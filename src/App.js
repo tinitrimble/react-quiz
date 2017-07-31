@@ -22,7 +22,7 @@ class App extends Component {
       showIntro: true
     })
   }
-  handleQuizStart() {
+  handleQuizStart(props) {
     this.setState({ showIntro: false })
   }
   handleAnswerSelected(answer, questionNumber) {
