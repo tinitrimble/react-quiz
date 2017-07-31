@@ -22,7 +22,7 @@ class App extends Component {
       showIntro: true
     })
   }
-  handleQuizStart(props) {
+  handleQuizStart() {
     this.setState({ showIntro: false })
   }
   handleAnswerSelected(answer, questionNumber) {
@@ -63,7 +63,8 @@ class App extends Component {
             <Introquiz
               quiztitle={quizInfo.quizheadline.quiztitle}
               intropic={quizInfo.quizheadline.intropic}
-              quizsummary={quizInfo.quizheadline.quizsummary} />
+              quizsummary={quizInfo.quizheadline.quizsummary}
+              onClick={this.handleQuizStart}/>
             <Adboxtwo />
           </div>
         ) : (
