@@ -21,6 +21,11 @@ class App extends Component {
       showIntro: true
     })
   }
+  handleQuizStart() {
+    this.setState({
+      showIntro: false
+    })
+  }
   handleAnswerSelected(answer, questionNumber) {
     const updatedUserAnswers = this.state.userAnswers.slice();
     updatedUserAnswers[questionNumber] = answer
@@ -46,13 +51,14 @@ class App extends Component {
     }
   }
   render() {
+    const isQuizIntro = this.state.showIntro;
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2 className="page-name">Quizzelydoo</h2>
         </div>
-        {if (showIntro) => {
+        {isQuizIntro ? (
           <div className="Introduction">
             <Adbox />
             <Introquiz
@@ -61,7 +67,7 @@ class App extends Component {
               quizsummary={quizInfo.quizheadline.quizsummary} />
             <Adboxtwo />
           </div>
-        } else {
+        ) : (
           <div className="Quiz-Display">
             <Counter
               totalscore={this.getCorrectAnswerCount()} />
@@ -75,12 +81,12 @@ class App extends Component {
                 onClick={this.handleAnswerSelected}
                 userAnswer={this.state.userAnswers[index]}/>
             )}
-            {this.getResults()}
           </div>
-        }
-      }
+        )}
+        {this.getResults()}
+      </div>
     )
   }
 }
 
-        export default App;
+export default App;
