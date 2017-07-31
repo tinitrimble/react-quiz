@@ -70,7 +70,8 @@ class App extends Component {
         ) : (
           <div className="Quiz-Display">
             <Counter
-              totalscore={this.getCorrectAnswerCount()} />
+              totalscore={this.getCorrectAnswerCount()} 
+              className="counterpos" />
             {quizInfo.questions.map((question, index) =>
               <Question
                 key={index}
