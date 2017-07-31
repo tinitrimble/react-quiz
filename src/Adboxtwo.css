@@ -1,0 +1,25 @@
+@media (min-width: 1001px) {
+  .ad-container-two {
+    float: right;
+    margin-right: 20px;
+    margin-top: -587px;
+  }
+  .ad-container-two .ad-box-two {
+    height: 150px;
+    width: 250px;
+    display: block;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .ad-container-two {
+    visibility: hidden;
+  }
+  .ad-container-two .ad-box-two {
+    visibility: hidden;
+  }
+}
+

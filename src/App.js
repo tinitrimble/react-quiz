@@ -6,6 +6,8 @@ import logo from './q2.svg';
 import './App.css';
 import quizInfo from './quiz.json';
 import Results from './Results.js';
+import Adbox from './Adbox.js';
+import Adboxtwo from './Adboxtwo.js';
 
 class App extends Component {
   constructor() {
@@ -47,13 +49,18 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Quizzelydoo</h2>
+          <h2 className="page-name">Quizzelydoo</h2>
         </div>
-        <Introquiz
-          quiztitle={quizInfo.quizheadline.quiztitle}
-          intropic={quizInfo.quizheadline.intropic}
-          quizsummary={quizInfo.quizheadline.quizsummary} />
-        <Counter totalscore={this.getCorrectAnswerCount} />
+        <div className="Introduction">
+          <Adbox />
+          <Introquiz
+            quiztitle={quizInfo.quizheadline.quiztitle}
+            intropic={quizInfo.quizheadline.intropic}
+            quizsummary={quizInfo.quizheadline.quizsummary} />
+          <Adboxtwo />
+        </div>
+        <Counter
+          totalscore={this.getCorrectAnswerCount()} />
         {quizInfo.questions.map((question, index) =>
           <Question
             key={index}

@@ -1,0 +1,24 @@
+@media (min-width: 1001px) {
+  .ad-container {
+    margin: 40px 0 0 20px;
+    float: left;
+  }
+  .ad-container .ad-box {
+    height: 150px;
+    width: 250px;
+    display: block;
+    border: 2px solid black;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .ad-container {
+    visibility: hidden;
+  }
+  .ad-container .ad-box {
+    visibility: hidden;
+  }
+}
+
+

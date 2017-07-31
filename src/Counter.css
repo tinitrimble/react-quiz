@@ -1,10 +1,22 @@
 .counter-info {
   border: 1px solid black;
-  float: right;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   background-color: white;
   color: black;
   padding: 20px 10px;
   margin-bottom: 26px;
   color: #59605f;
+}
+
+@media (min-width:601px) {
+  .counter-info {
+    position: sticky;
+  }
+}
+
+@media (max-width:600px) {
+  .counter-info {
+    position: fixed;
+  }
 }

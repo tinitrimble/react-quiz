@@ -1,24 +1,30 @@
 .App {
-  text-align: center;
   background-color: #f2f9f9;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 10s linear;
-  height: 90px;
-  margin-right: 10px;
-  margin-bottom: -15px;
+  animation: App-logo-spin infinite 20s linear;
+  height: 75px;
+  margin: 5px 30px 1px 20px;
+  display: inline;
+  vertical-align: middle;
 }
 
 .App-header {
   background-color: #ffbb91;
-  height: 135px;
-  padding: 5px;
-  color: white;
+  height: 90px;
 }
 
-.App-intro {
+.App .page-name {
+  display: inline;
+  color: white;
+  vertical-align: middle;
+  padding: 2px 2px 2px 2px;
   font-size: 36px;
+}
+
+.App .Introduction {
+  display: inline;
 }
 
 @keyframes App-logo-spin {

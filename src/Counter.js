@@ -9,8 +9,7 @@ class Counter extends Component {
   render() {
     return (
       <div className="counter-info">
-        <p>Your score is: </p>
-        {this.props.totalscore}
+        <p>Your score is: {this.props.totalscore}</p>
       </div>
     )
   }
