@@ -53,31 +53,34 @@ class App extends Component {
           <h2 className="page-name">Quizzelydoo</h2>
         </div>
         {if (showIntro) => {
-        <div className="Introduction">
-          <Adbox />
-          <Introquiz
-            quiztitle={quizInfo.quizheadline.quiztitle}
-            intropic={quizInfo.quizheadline.intropic}
-            quizsummary={quizInfo.quizheadline.quizsummary} />
-          <Adboxtwo />
-        </div>
+          <div className="Introduction">
+            <Adbox />
+            <Introquiz
+              quiztitle={quizInfo.quizheadline.quiztitle}
+              intropic={quizInfo.quizheadline.intropic}
+              quizsummary={quizInfo.quizheadline.quizsummary} />
+            <Adboxtwo />
+          </div>
         } else {
-        <Counter
-          totalscore={this.getCorrectAnswerCount()} />
-        {quizInfo.questions.map((question, index) =>
-          <Question
-            key={index}
-            questionNumber={index}
-            text={question.text}
-            picture={question.picture}
-            answers={question.answers}
-            onClick={this.handleAnswerSelected}
-            userAnswer={this.state.userAnswers[index]}/>
-        )}
-        {this.getResults()}
+          <div className="Quiz-Display">
+            <Counter
+              totalscore={this.getCorrectAnswerCount()} />
+            {quizInfo.questions.map((question, index) =>
+              <Question
+                key={index}
+                questionNumber={index}
+                text={question.text}
+                picture={question.picture}
+                answers={question.answers}
+                onClick={this.handleAnswerSelected}
+                userAnswer={this.state.userAnswers[index]}/>
+            )}
+            {this.getResults()}
+          </div>
         }
-      </div>
-    )}
+      }
+    )
+  }
 }
 
-export default App;
+        export default App;
