@@ -18,22 +18,13 @@ class App extends Component {
     this.setState({
       correctAnswers: 0,
       userAnswers: [],
-      in: true,
       showIntro: true
     })
   }
   handleQuizStart() {
     this.setState({
-      in: false,
       showIntro: false
     })
-  }
-  onEnter() {
-    if (!this.state.showIntro) {
-      this.setState({
-        in: true
-      })
-    }
   }
   handleAnswerSelected(answer, questionNumber) {
     const updatedUserAnswers = this.state.userAnswers.slice();
@@ -68,7 +59,7 @@ class App extends Component {
           <h2 className="page-name">Quizzelydoo</h2>
         </div>
         {isQuizIntro ? (
-          <Transition in={this.state.in} timeout={400} className="introquiz">
+          <Transition in={isQuizIntro} timeout={400} className="introquiz">
             <Introquiz
               className="Quiz-Introduction"
               quiztitle={quizInfo.quizheadline.quiztitle}
@@ -77,7 +68,7 @@ class App extends Component {
               onClick={this.handleQuizStart}/>
           </Transition>
         ) : (
-          <Transition in={this.onEnter} timeout={400} className="questions">
+          <Transition in={!isQuizIntro} timeout={400} className="questions">
             <div className="question-content">
               <Counter
                 totalscore={this.getCorrectAnswerCount()}
