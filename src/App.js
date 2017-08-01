@@ -6,13 +6,11 @@ import logo from './q2.svg';
 import './App.css';
 import quizInfo from './quiz.json';
 import Results from './Results.js';
-import Adbox from './Adbox.js';
-import Adboxtwo from './Adboxtwo.js';
 import Transition from 'react-transition-group/Transition';
 
 class App extends Component {
   constructor() {
-    super ();
+    super();
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this)
     this.handleQuizStart = this.handleQuizStart.bind(this)
   }
