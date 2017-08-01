@@ -68,7 +68,7 @@ class App extends Component {
           <h2 className="page-name">Quizzelydoo</h2>
         </div>
         {isQuizIntro ? (
-          <Transition in={this.state.in} timeout={400} className="introquiz-exiting">
+          <Transition in={this.state.in} timeout={400} className="introquiz">
             <Introquiz
               className="Quiz-Introduction"
               quiztitle={quizInfo.quizheadline.quiztitle}
@@ -77,7 +77,7 @@ class App extends Component {
               onClick={this.handleQuizStart}/>
           </Transition>
         ) : (
-          <Transition in={this.onEnter} timeout={400} className="question-entering">
+          <Transition in={this.onEnter} timeout={400} className="questions">
             <div className="question-content">
               <Counter
                 totalscore={this.getCorrectAnswerCount()}
