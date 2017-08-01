@@ -70,7 +70,7 @@ class App extends Component {
           <h2 className="page-name">Quizzelydoo</h2>
         </div>
         {isQuizIntro ? (
-          <Transition in={this.state.in} timeout={400} className="exiting">
+          <Transition in={this.state.in} timeout={400} className="introquiz-exiting">
             <Introquiz
               className="Quiz-Introduction"
               quiztitle={quizInfo.quizheadline.quiztitle}
