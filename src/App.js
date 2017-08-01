@@ -79,23 +79,25 @@ class App extends Component {
               onClick={this.handleQuizStart}/>
           </Transition>
         ) : (
-          <Transition in={this.onEnter} timeout={400} className="entering">
-            <Counter
-              totalscore={this.getCorrectAnswerCount()}
-              className="counterpos" />
-            {quizInfo.questions.map((question, index) =>
-              <Question
-                key={index}
-                questionNumber={index}
-                text={question.text}
-                picture={question.picture}
-                answers={question.answers}
-                onClick={this.handleAnswerSelected}
-                userAnswer={this.state.userAnswers[index]}/>
-            )}
-            <div className="spaceyspace">
+          <Transition in={this.onEnter} timeout={400} className="question-entering">
+            <div className="question-content">
+              <Counter
+                totalscore={this.getCorrectAnswerCount()}
+                className="counterpos" />
+              {quizInfo.questions.map((question, index) =>
+                <Question
+                  key={index}
+                  questionNumber={index}
+                  text={question.text}
+                  picture={question.picture}
+                  answers={question.answers}
+                  onClick={this.handleAnswerSelected}
+                  userAnswer={this.state.userAnswers[index]}/>
+              )}
+              <div className="spaceyspace">
+              </div>
+              {this.getResults()}
             </div>
-            {this.getResults()}
           </Transition>
         )}
       </div>

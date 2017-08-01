@@ -31,22 +31,14 @@
   height: 60px;
 }
 
-.App .exiting {
+.App .introquiz-exiting {
   animation: comp-exit 2s linear;
+  transform: translate3d(0px, 50px, 0px);
 }
 
-.App .entering {
+.App .question-entering {
   animation: comp-enter 2s linear;
-}
-
-@keyframes comp-exit {
-  0% { transform: translate3d(0px, 10px, 0px); }
-  100% { transform: translate3d(0px, 50px, 0px); } 
-}
-
-@keyframes comp-enter {
-  0% { transform: translate3d(10px, 0px, 0px); }
-  100% { transform: translate3d(50px, 0px, 0px); } 
+  transform: translate3d(50px, 0px, 0px);
 }
 
 @keyframes App-logo-spin {
