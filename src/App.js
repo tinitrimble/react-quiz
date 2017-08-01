@@ -30,7 +30,7 @@ class App extends Component {
       showIntro: false
     })
   }
-  getQuizTransition() {
+  onEnter() {
     if (!this.state.showIntro) {
       this.setState({
         in: true
@@ -79,7 +79,7 @@ class App extends Component {
               onClick={this.handleQuizStart}/>
           </Transition>
         ) : (
-          <Transition in={this.getQuizTransition} timeout={400} className="entering">
+          <Transition in={this.onEnter} timeout={400} className="entering">
             <Counter
               totalscore={this.getCorrectAnswerCount()}
               className="counterpos" />
