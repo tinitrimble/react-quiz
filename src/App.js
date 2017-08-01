@@ -8,6 +8,7 @@ import quizInfo from './quiz.json';
 import Results from './Results.js';
 import Adbox from './Adbox.js';
 import Adboxtwo from './Adboxtwo.js';
+import Transition from 'react-transition-group/Transition';
 
 class App extends Component {
   constructor() {
@@ -19,11 +20,22 @@ class App extends Component {
     this.setState({
       correctAnswers: 0,
       userAnswers: [],
+      in: true,
       showIntro: true
     })
   }
   handleQuizStart() {
-    this.setState({ showIntro: false })
+    this.setState({
+      in: false,
+      showIntro: false
+    })
+  }
+  getQuizTransition() {
+    if (!this.state.showIntro) {
+      this.setState({
+        in: true
+      })
+    }
   }
   handleAnswerSelected(answer, questionNumber) {
     const updatedUserAnswers = this.state.userAnswers.slice();
@@ -58,19 +70,18 @@ class App extends Component {
           <h2 className="page-name">Quizzelydoo</h2>
         </div>
         {isQuizIntro ? (
-          <div className="Introduction">
-            <Adbox />
+          <Transition in={this.state.in} timeout={400} className="exiting">
             <Introquiz
+              className="Quiz-Introduction"
               quiztitle={quizInfo.quizheadline.quiztitle}
               intropic={quizInfo.quizheadline.intropic}
               quizsummary={quizInfo.quizheadline.quizsummary}
               onClick={this.handleQuizStart}/>
-            <Adboxtwo />
-          </div>
+          </Transition>
         ) : (
-          <div className="Quiz-Display">
+          <Transition in={this.getQuizTransition} timeout={400} className="entering">
             <Counter
-              totalscore={this.getCorrectAnswerCount()} 
+              totalscore={this.getCorrectAnswerCount()}
               className="counterpos" />
             {quizInfo.questions.map((question, index) =>
               <Question
@@ -84,9 +95,9 @@ class App extends Component {
             )}
             <div className="spaceyspace">
             </div>
-          </div>
+            {this.getResults()}
+          </Transition>
         )}
-        {this.getResults()}
       </div>
     )
   }
