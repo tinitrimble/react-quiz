@@ -6,7 +6,7 @@ import logo from './q2.svg';
 import './App.css';
 import quizInfo from './quiz.json';
 import Results from './Results.js';
-import Transition from 'react-transition-group/Transition';
+import Transition from 'react-transition-group/CSSTransition';
 
 class App extends Component {
   constructor() {
@@ -59,7 +59,7 @@ class App extends Component {
           <h2 className="page-name">Quizzelydoo</h2>
         </div>
         {isQuizIntro ? (
-          <Transition in={isQuizIntro} timeout={400} className="introquiz">
+          <Transition in={isQuizIntro} timeout={400} classNames="introquiz">
             <Introquiz
               className="Quiz-Introduction"
               quiztitle={quizInfo.quizheadline.quiztitle}
@@ -68,8 +68,9 @@ class App extends Component {
               onClick={this.handleQuizStart}/>
           </Transition>
         ) : (
-          <Transition in={!isQuizIntro} timeout={400} className="questions">
+          <Transition in={!isQuizIntro} timeout={400} classNames="questions">
             <div className="question-content">
+              <h1 className="Quiz-Head">{quizInfo.quizheadline.quiztitle}</h1>
               <Counter
                 totalscore={this.getCorrectAnswerCount()}
                 className="counterpos" />

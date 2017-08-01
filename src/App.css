@@ -27,6 +27,17 @@
   display: inline;
 }
 
+.App .Quiz-Head {
+  font-size: 42px;
+  color: #59605f;
+  text-align: center;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .App .spaceyspace {
   height: 60px;
 }
