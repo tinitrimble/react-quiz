@@ -82,6 +82,8 @@ class App extends Component {
                 onClick={this.handleAnswerSelected}
                 userAnswer={this.state.userAnswers[index]}/>
             )}
+            <div className="spaceyspace">
+            </div>
           </div>
         )}
         {this.getResults()}

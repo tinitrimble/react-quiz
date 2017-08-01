@@ -27,6 +27,10 @@
   display: inline;
 }
 
+.App .spaceyspace {
+  height: 60px;
+}
+
 @keyframes App-logo-spin {
   0% { transform: rotate(-30deg); }
   50% { transform: rotate(30deg); }
