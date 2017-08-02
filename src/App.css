@@ -5,7 +5,7 @@
 .App-logo {
   animation: App-logo-spin infinite 30s linear;
   height: 55px;
-  margin: 20px 31px 1px 220px;
+  margin: 10px 31px 1px 220px;
   display: inline;
   transition: height 0.4s ease-in-out;
 }
@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  height: 90px;
+  height: 70px;
   border-bottom: 2px solid #9116fc;
 }
 
@@ -24,7 +24,7 @@
   color: black;
   position: absolute;
   padding: 2px 2px 2px 2px;
-  margin-top: 25px;
+  margin-top: 15px;
   font-size: 36px;
   font-family: 'Poiret One', cursive;
 }
@@ -63,7 +63,7 @@
 .App .searchbar {
   display: inline;
   float: right;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-right: -110px;
   width: 170px;
   transition: width 0.4s ease-in-out;
@@ -71,7 +71,7 @@
 }
 
 .App .searchbar:focus {
-  width: 34%;
+  width: 26%;
   outline: 1px solid rgba(255, 25, 94, .5);
   font-size: 16px;
 }
@@ -83,12 +83,11 @@
 .App .Quiz-Head {
   font-size: 42px;
   color: #59605f;
-  text-align: center;
+  text-align: left;
+  margin-left: 312px;
   display: block;
   margin-top: 25px;
   margin-bottom: 25px;
-  margin-left: auto;
-  margin-right: auto;
   font-weight: 400;
 }
 
@@ -129,11 +128,11 @@
     display: block;
     margin-top: 5px;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     text-align: right;
   }
   .App .signup {
-    font-size: 16px;
+    font-size: 14px;
     display: block;
     text-align: right;
   }
@@ -146,5 +145,8 @@
   }
   .App .searchbar:focus {
     width: 35%;
+  }
+  .App .Quiz-Head {
+    margin-left: 30px;
   }
 }
