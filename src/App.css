@@ -5,13 +5,18 @@
 .App-logo {
   animation: App-logo-spin infinite 30s linear;
   height: 55px;
-  margin: 20px 30px 1px 250px;
+  margin: 20px 31px 1px 250px;
   display: inline;
+  transition: height 0.4s ease-in-out;
+}
+
+.App-logo:hover {
+  height: 70%;
 }
 
 .App-header {
   height: 90px;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #9116fc;
 }
 
 .App .page-name {
@@ -21,7 +26,22 @@
   padding: 2px 2px 2px 2px;
   margin-top: 25px;
   font-size: 36px;
-  font-family: 'Poiret One', cursive; 
+  font-family: 'Poiret One', cursive;
+}
+
+.App .searchbar {
+  display: inline;
+  float: right;
+  margin-top: 50px;
+  width: 170px;
+  transition: width 0.4s ease-in-out;
+  font-size: 16px;
+}
+
+.App .searchbar:focus {
+  width: 34%;
+  outline: 1px solid rgba(255, 25, 94, .5);
+  font-size: 16px;
 }
 
 .App .Introduction {
@@ -71,5 +91,14 @@
   .App .page-name {
     font-size: 36px;
     margin-top: 10px;
+  }
+  .App .searchbar {
+    margin-top: 70px;
+    font-size: 14px;
+    transition: width 0.4s ease-in-out;
+    width: 80px;
+  }
+  .App .searchbar:focus {
+    width: 34%;
   }
 }

@@ -57,6 +57,8 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2 className="page-name">Quizzelydoo</h2>
+          <input type="text" name="search" placeholder="Search" className="searchbar" >
+          </input>
         </div>
         {isQuizIntro ? (
           <Transition in={isQuizIntro} timeout={400} classNames="introquiz">
