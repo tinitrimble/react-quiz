@@ -38,26 +38,15 @@
   margin-left: 0 auto;
 }
 
-.App .login {
+.App .profile-page {
   display: inline-block;
   margin-right: 10px;
   text-decoration: none;
   color: #5daa97;
 }
 
-.App .login:hover {
+.App .profile-page:hover {
   color: #437c6e;
-}
-
-.App .signup {
-  margin-right: 10px;
-  margin-left: 10px;
-  text-decoration: none;
-  color: #ff802b;
-}
-
-.App .signup:hover {
-  color: #c94d14;
 }
 
 .App .searchbar {
@@ -124,20 +113,15 @@
     font-size: 36px;
     margin-top: 10px;
   }
-  .App .login {
+  .App .profile-page {
     display: block;
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 14px;
     margin-bottom: 8px;
     text-align: right;
   }
-  .App .signup {
-    font-size: 14px;
-    display: block;
-    text-align: right;
-  }
   .App .searchbar {
-    margin-right: -60px;
+    margin-right: -78px;
     margin-top: 70px;
     font-size: 16px;
     transition: width 0.4s ease-in-out;

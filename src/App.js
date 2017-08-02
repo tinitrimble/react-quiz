@@ -58,8 +58,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2 className="page-name">Quizzelydoo</h2>
           <div className="profile-menu">
-            <a href="www.google.com" className="login">Login</a>
-            <a href="www.google.com" className="signup">Signup</a>
+            <a href="www.google.com" className="profile-page">Profile page</a>
           </div>
           <input type="text" name="search" placeholder="Search" className="searchbar" >
           </input>
