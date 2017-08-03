@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Introquiz.css';
 import PropTypes from 'prop-types';
-import scrollToElement from 'scroll-to-element';
 
 class Introquiz extends Component {
   static propTypes = {
@@ -14,7 +13,7 @@ class Introquiz extends Component {
     return (
       <div className="quiz-title">
         <h1 className ="quiz-name">{this.props.quiztitle}</h1>
-        <img src={this.props.intropic}  className="Quiz-pic" />
+        <img src={this.props.intropic}  className="Quiz-pic" alt="twinpic" />
         <div className="sum">
           {this.props.quizsummary}
         </div>

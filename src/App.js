@@ -6,12 +6,11 @@ import logo from './q2.svg';
 import './App.css';
 import quizInfo from './quiz.json';
 import Results from './Results.js';
-import Adbox from './Adbox.js';
-import Adboxtwo from './Adboxtwo.js';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 class App extends Component {
   constructor() {
-    super ();
+    super();
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this)
     this.handleQuizStart = this.handleQuizStart.bind(this)
   }
@@ -23,7 +22,9 @@ class App extends Component {
     })
   }
   handleQuizStart() {
-    this.setState({ showIntro: false })
+    this.setState({
+      showIntro: false
+    })
   }
   handleAnswerSelected(answer, questionNumber) {
     const updatedUserAnswers = this.state.userAnswers.slice();
@@ -56,35 +57,54 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2 className="page-name">Quizzelydoo</h2>
+          <div className="profile-menu">
+            <a href="www.google.com" className="profile-page">Profile page</a>
+          </div>
+          <input type="text" name="search" placeholder="Search" className="searchbar" >
+          </input>
         </div>
         {isQuizIntro ? (
-          <div className="Introduction">
-            <Adbox />
+          <CSSTransitionGroup 
+            in={isQuizIntro} 
+            transitionEnter={false}
+            transitionLeaveTimeout={300}
+            classNames="introquiz"
+            transitionName="introquiz">
             <Introquiz
+              className="Quiz-Introduction"
               quiztitle={quizInfo.quizheadline.quiztitle}
               intropic={quizInfo.quizheadline.intropic}
               quizsummary={quizInfo.quizheadline.quizsummary}
               onClick={this.handleQuizStart}/>
-            <Adboxtwo />
-          </div>
+          </CSSTransitionGroup>
         ) : (
-          <div className="Quiz-Display">
-            <Counter
-              totalscore={this.getCorrectAnswerCount()} 
-              className="counterpos" />
-            {quizInfo.questions.map((question, index) =>
-              <Question
-                key={index}
-                questionNumber={index}
-                text={question.text}
-                picture={question.picture}
-                answers={question.answers}
-                onClick={this.handleAnswerSelected}
-                userAnswer={this.state.userAnswers[index]}/>
-            )}
-          </div>
+          <CSSTransitionGroup 
+            in={!isQuizIntro} 
+            transitionEnterTimeout={500}
+            transitionLeave={false}
+            classNames="introquiz"
+            transitionName="questions">
+            <div className="question-content">
+              <h1 className="Quiz-Head">{quizInfo.quizheadline.quiztitle}</h1>
+              <Counter
+                totalscore={this.getCorrectAnswerCount()}
+                className="counterpos" />
+              {quizInfo.questions.map((question, index) =>
+                <Question
+                  key={index}
+                  questionNumber={index}
+                  text={question.text}
+                  picture={question.picture}
+                  answers={question.answers}
+                  onClick={this.handleAnswerSelected}
+                  userAnswer={this.state.userAnswers[index]}/>
+              )}
+              <div className="spaceyspace">
+              </div>
+              {this.getResults()}
+            </div>
+          </CSSTransitionGroup>
         )}
-        {this.getResults()}
       </div>
     )
   }
