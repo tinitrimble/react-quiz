@@ -34,6 +34,10 @@
   display: block;
 }
 
+.question .possible-choices .choice:hover {
+  cursor: pointer;
+}
+
 .question .possible-choices .choice {
   margin-bottom: 5px;
   margin-top: 5px;

@@ -84,14 +84,12 @@
   height: 60px;
 }
 
-.App .introquiz-exit {
-  animation: comp-exit 200ms ease-in-out;
-  transform: translate3d(0px, 50px, 0px);
+.App .introquiz-leave {
+  transition: translate3d(0px, 51px, 0px);
 }
 
 .App .questions-entering {
-  animation: 400ms ease-in;
-  transform: translate3d(0px, 20px, 0px);
+  transition: translate3d(0px, 20px, 0px);
 }
 
 @keyframes App-logo-spin {

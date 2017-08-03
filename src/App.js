@@ -64,7 +64,7 @@ class App extends Component {
           </input>
         </div>
         {isQuizIntro ? (
-          <Transition in={isQuizIntro} timeout={400} classNames="introquiz">
+          <Transition in={isQuizIntro} transitionLeaveTimeout={400} classNames="introquiz">
             <Introquiz
               className="Quiz-Introduction"
               quiztitle={quizInfo.quizheadline.quiztitle}
