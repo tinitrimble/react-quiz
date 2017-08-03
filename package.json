@@ -6,8 +6,9 @@
     "classnames": "^2.2.5",
     "i": "^0.3.5",
     "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.0.0-rc.1",
     "react-dom": "^15.5.4",
-    "react-transition-group": "^2.2.0",
+    "react-transition-group": "^1.2.0",
     "scroll-to-element": "^2.0.0",
     "webfontloader": "^1.6.28"
   },

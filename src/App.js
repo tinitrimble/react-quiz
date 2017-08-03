@@ -6,7 +6,7 @@ import logo from './q2.svg';
 import './App.css';
 import quizInfo from './quiz.json';
 import Results from './Results.js';
-import Transition from 'react-transition-group/CSSTransition';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 class App extends Component {
   constructor() {
@@ -64,16 +64,26 @@ class App extends Component {
           </input>
         </div>
         {isQuizIntro ? (
-          <Transition in={isQuizIntro} transitionLeaveTimeout={400} classNames="introquiz">
+          <CSSTransitionGroup 
+            in={isQuizIntro} 
+            transitionEnter={false}
+            transitionLeaveTimeout={300}
+            classNames="introquiz"
+            transitionName="introquiz">
             <Introquiz
               className="Quiz-Introduction"
               quiztitle={quizInfo.quizheadline.quiztitle}
               intropic={quizInfo.quizheadline.intropic}
               quizsummary={quizInfo.quizheadline.quizsummary}
               onClick={this.handleQuizStart}/>
-          </Transition>
+          </CSSTransitionGroup>
         ) : (
-          <Transition in={!isQuizIntro} timeout={400} classNames="questions">
+          <CSSTransitionGroup 
+            in={!isQuizIntro} 
+            transitionEnterTimeout={500}
+            transitionLeave={false}
+            classNames="introquiz"
+            transitionName="questions">
             <div className="question-content">
               <h1 className="Quiz-Head">{quizInfo.quizheadline.quiztitle}</h1>
               <Counter
@@ -93,7 +103,7 @@ class App extends Component {
               </div>
               {this.getResults()}
             </div>
-          </Transition>
+          </CSSTransitionGroup>
         )}
       </div>
     )

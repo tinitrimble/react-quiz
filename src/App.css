@@ -84,9 +84,18 @@
   height: 60px;
 }
 
-.App .introquiz-leave {
-  transition: translate3d(0px, 51px, 0px);
+.introquiz-leave {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
+
+.introquiz-leave.introquiz-leave-active {
+  opacity: 0;
+  transform: translate3d(250px,0,0);
+}
+
 
 .App .questions-entering {
   transition: translate3d(0px, 20px, 0px);
